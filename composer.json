@@ -1,0 +1,35 @@
+{
+    "name": "robertgdev/ta-lib-hybrid",
+    "description": "Hybrid TA-Lib wrapper: ext-ta-lib with pure PHP fallback",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.3"
+    },
+    "require-dev": {
+        "pestphp/pest": "^4.0",
+        "thecodingmachine/phpstan-safe-rule": "^1.4"
+    },
+    "suggest": {
+        "ext-ta_lib": "^1.0 - Use the C extension for 5-30x faster calculations"
+    },
+    "autoload": {
+        "psr-4": {
+            "robertgdev\\TaLibHybrid\\": "src/"
+        },
+        "files": ["src/Constants.php", "src/Functions.php"]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "robertgdev\\TaLibHybrid\\Tests\\": "tests/"
+        },
+        "files": ["tests/Helpers.php"]
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
