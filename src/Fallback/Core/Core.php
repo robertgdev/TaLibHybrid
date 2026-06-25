@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace robertgdev\TaLibHybrid\Fallback\Core;
+namespace RobertGDev\TaLibHybrid\Fallback\Core;
 
-use robertgdev\TaLibHybrid\Enum\CandleSettingType;
-use robertgdev\TaLibHybrid\Enum\Compatibility;
-use robertgdev\TaLibHybrid\Enum\FuncUnstId;
-use robertgdev\TaLibHybrid\Enum\RangeType;
-use robertgdev\TaLibHybrid\Enum\ReturnCode;
-use robertgdev\TaLibHybrid\Fallback\Classes\CandleSetting;
+use RobertGDev\TaLibHybrid\Enum\CandleSettingType;
+use RobertGDev\TaLibHybrid\Enum\Compatibility;
+use RobertGDev\TaLibHybrid\Enum\FuncUnstId;
+use RobertGDev\TaLibHybrid\Enum\RangeType;
+use RobertGDev\TaLibHybrid\Enum\ReturnCode;
+use RobertGDev\TaLibHybrid\Fallback\Classes\CandleSetting;
 
 class Core
 {

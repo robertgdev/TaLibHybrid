@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use robertgdev\TaLibHybrid\Backend\ExtensionBackend;
-use robertgdev\TaLibHybrid\Backend\FallbackBackend;
+use RobertGDev\TaLibHybrid\Backend\ExtensionBackend;
+use RobertGDev\TaLibHybrid\Backend\FallbackBackend;
 
 describe('Cross-backend: single-output overlap studies', function () {
     $close = generateClose(100);

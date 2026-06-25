@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use robertgdev\TaLibHybrid\TaLibHybrid;
+use RobertGDev\TaLibHybrid\TaLibHybrid;
 
 if (! function_exists('ta_version')) {
     function ta_version(): string

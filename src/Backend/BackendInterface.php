@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace robertgdev\TaLibHybrid\Backend;
+namespace RobertGDev\TaLibHybrid\Backend;
 
 interface BackendInterface
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use robertgdev\TaLibHybrid\Backend\BackendInterface;
-use robertgdev\TaLibHybrid\Backend\ExtensionBackend;
-use robertgdev\TaLibHybrid\Backend\FallbackBackend;
+use RobertGDev\TaLibHybrid\Backend\BackendInterface;
+use RobertGDev\TaLibHybrid\Backend\ExtensionBackend;
+use RobertGDev\TaLibHybrid\Backend\FallbackBackend;
 
 describe('BackendInterface contract', function () {
     test('ExtensionBackend implements BackendInterface', function () {

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace robertgdev\TaLibHybrid\Fallback\Core;
+namespace RobertGDev\TaLibHybrid\Fallback\Core;
 
-use robertgdev\TaLibHybrid\Enum\FuncUnstId;
-use robertgdev\TaLibHybrid\Enum\MovingAverageType;
-use robertgdev\TaLibHybrid\Enum\ReturnCode;
+use RobertGDev\TaLibHybrid\Enum\FuncUnstId;
+use RobertGDev\TaLibHybrid\Enum\MovingAverageType;
+use RobertGDev\TaLibHybrid\Enum\ReturnCode;
 
 class OverlapStudies extends Core
 {

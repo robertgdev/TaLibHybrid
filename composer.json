@@ -15,13 +15,13 @@
     },
     "autoload": {
         "psr-4": {
-            "robertgdev\\TaLibHybrid\\": "src/"
+            "RobertGDev\\TaLibHybrid\\": "src/"
         },
         "files": ["src/Constants.php", "src/Functions.php"]
     },
     "autoload-dev": {
         "psr-4": {
-            "robertgdev\\TaLibHybrid\\Tests\\": "tests/"
+            "RobertGDev\\TaLibHybrid\\Tests\\": "tests/"
         },
         "files": ["tests/Helpers.php"]
     },

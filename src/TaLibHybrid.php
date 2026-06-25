@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace robertgdev\TaLibHybrid;
+namespace RobertGDev\TaLibHybrid;
 
-use robertgdev\TaLibHybrid\Backend\BackendInterface;
-use robertgdev\TaLibHybrid\Backend\ExtensionBackend;
-use robertgdev\TaLibHybrid\Backend\FallbackBackend;
+use RobertGDev\TaLibHybrid\Backend\BackendInterface;
+use RobertGDev\TaLibHybrid\Backend\ExtensionBackend;
+use RobertGDev\TaLibHybrid\Backend\FallbackBackend;
 
 class TaLibHybrid
 {

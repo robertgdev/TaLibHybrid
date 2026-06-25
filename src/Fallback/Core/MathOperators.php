@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace robertgdev\TaLibHybrid\Fallback\Core;
+namespace RobertGDev\TaLibHybrid\Fallback\Core;
 
-use robertgdev\TaLibHybrid\Enum\ReturnCode;
+use RobertGDev\TaLibHybrid\Enum\ReturnCode;
 
 class MathOperators extends Core
 {

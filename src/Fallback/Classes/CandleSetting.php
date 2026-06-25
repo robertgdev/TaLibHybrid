@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace robertgdev\TaLibHybrid\Fallback\Classes;
+namespace RobertGDev\TaLibHybrid\Fallback\Classes;
 
 class CandleSetting
 {

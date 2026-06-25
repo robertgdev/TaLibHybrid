@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use robertgdev\TaLibHybrid\Backend\FallbackBackend;
-use robertgdev\TaLibHybrid\Exception\TaLibInputException;
+use RobertGDev\TaLibHybrid\Backend\FallbackBackend;
+use RobertGDev\TaLibHybrid\Exception\TaLibInputException;
 
 describe('FallbackBackend input validation', function () {
     $fb = new FallbackBackend;

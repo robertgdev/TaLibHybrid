@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-use robertgdev\TaLibHybrid\Enum\CandleSettingType;
-use robertgdev\TaLibHybrid\Enum\Compatibility;
-use robertgdev\TaLibHybrid\Enum\FuncUnstId;
-use robertgdev\TaLibHybrid\Enum\MovingAverageType;
-use robertgdev\TaLibHybrid\Enum\RangeType;
-use robertgdev\TaLibHybrid\Enum\ReturnCode;
-use robertgdev\TaLibHybrid\Exception\TaLibCalculationException;
-use robertgdev\TaLibHybrid\Exception\TaLibException;
-use robertgdev\TaLibHybrid\Exception\TaLibInputException;
+use RobertGDev\TaLibHybrid\Enum\CandleSettingType;
+use RobertGDev\TaLibHybrid\Enum\Compatibility;
+use RobertGDev\TaLibHybrid\Enum\FuncUnstId;
+use RobertGDev\TaLibHybrid\Enum\MovingAverageType;
+use RobertGDev\TaLibHybrid\Enum\RangeType;
+use RobertGDev\TaLibHybrid\Enum\ReturnCode;
+use RobertGDev\TaLibHybrid\Exception\TaLibCalculationException;
+use RobertGDev\TaLibHybrid\Exception\TaLibException;
+use RobertGDev\TaLibHybrid\Exception\TaLibInputException;
 
 describe('ReturnCode enum', function () {
     test('Success has value 0', function () {

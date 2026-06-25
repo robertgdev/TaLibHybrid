@@ -106,7 +106,7 @@ src/
 ### OOP via static facade
 
 ```php
-use robertgdev\TaLibHybrid\TaLibHybrid;
+use RobertGDev\TaLibHybrid\TaLibHybrid;
 
 $close = [44.02, 44.10, 44.16, 44.22, 44.10, 44.00, 44.12, 44.18, 44.28, 44.32];
 
@@ -138,8 +138,8 @@ These functions are only defined when `ext-ta_lib` is not loaded, so they never 
 ### Backend selection
 
 ```php
-use robertgdev\TaLibHybrid\TaLibHybrid;
-use robertgdev\TaLibHybrid\Backend\FallbackBackend;
+use RobertGDev\TaLibHybrid\TaLibHybrid;
+use RobertGDev\TaLibHybrid\Backend\FallbackBackend;
 
 // Force pure-PHP backend (e.g. for testing)
 TaLibHybrid::setBackend(new FallbackBackend());
@@ -158,8 +158,8 @@ TaLibHybrid::setBackend(null);
 ### Direct backend instantiation
 
 ```php
-use robertgdev\TaLibHybrid\Backend\ExtensionBackend;
-use robertgdev\TaLibHybrid\Backend\FallbackBackend;
+use RobertGDev\TaLibHybrid\Backend\ExtensionBackend;
+use RobertGDev\TaLibHybrid\Backend\FallbackBackend;
 
 $ext = new ExtensionBackend();
 $fb  = new FallbackBackend();

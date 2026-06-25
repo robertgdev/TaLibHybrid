@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace robertgdev\TaLibHybrid\Fallback\Core;
+namespace RobertGDev\TaLibHybrid\Fallback\Core;
 
-use robertgdev\TaLibHybrid\Enum\CandleSettingType;
-use robertgdev\TaLibHybrid\Enum\RangeType;
-use robertgdev\TaLibHybrid\Enum\ReturnCode;
+use RobertGDev\TaLibHybrid\Enum\CandleSettingType;
+use RobertGDev\TaLibHybrid\Enum\RangeType;
+use RobertGDev\TaLibHybrid\Enum\ReturnCode;
 
 class PatternRecognition extends Core
 {

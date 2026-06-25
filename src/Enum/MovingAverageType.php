@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace robertgdev\TaLibHybrid\Enum;
+namespace RobertGDev\TaLibHybrid\Enum;
 
 enum MovingAverageType: int
 {

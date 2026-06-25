@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use robertgdev\TaLibHybrid\Backend\BackendInterface;
-use robertgdev\TaLibHybrid\Backend\FallbackBackend;
-use robertgdev\TaLibHybrid\TaLibHybrid;
+use RobertGDev\TaLibHybrid\Backend\BackendInterface;
+use RobertGDev\TaLibHybrid\Backend\FallbackBackend;
+use RobertGDev\TaLibHybrid\TaLibHybrid;
 
 describe('TaLibHybrid facade', function () {
     [$open, $high, $low, $close, $volume] = generateOHLCV(100);

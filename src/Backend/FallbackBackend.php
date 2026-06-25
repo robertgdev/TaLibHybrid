@@ -2,22 +2,22 @@
 
 declare(strict_types=1);
 
-namespace robertgdev\TaLibHybrid\Backend;
+namespace RobertGDev\TaLibHybrid\Backend;
 
-use robertgdev\TaLibHybrid\Enum\ReturnCode;
-use robertgdev\TaLibHybrid\Exception\TaLibCalculationException;
-use robertgdev\TaLibHybrid\Exception\TaLibInputException;
-use robertgdev\TaLibHybrid\Fallback\Core\Core;
-use robertgdev\TaLibHybrid\Fallback\Core\CycleIndicators;
-use robertgdev\TaLibHybrid\Fallback\Core\MathOperators;
-use robertgdev\TaLibHybrid\Fallback\Core\MathTransform;
-use robertgdev\TaLibHybrid\Fallback\Core\MomentumIndicators;
-use robertgdev\TaLibHybrid\Fallback\Core\OverlapStudies;
-use robertgdev\TaLibHybrid\Fallback\Core\PatternRecognition;
-use robertgdev\TaLibHybrid\Fallback\Core\PriceTransform;
-use robertgdev\TaLibHybrid\Fallback\Core\StatisticFunctions;
-use robertgdev\TaLibHybrid\Fallback\Core\VolatilityIndicators;
-use robertgdev\TaLibHybrid\Fallback\Core\VolumeIndicators;
+use RobertGDev\TaLibHybrid\Enum\ReturnCode;
+use RobertGDev\TaLibHybrid\Exception\TaLibCalculationException;
+use RobertGDev\TaLibHybrid\Exception\TaLibInputException;
+use RobertGDev\TaLibHybrid\Fallback\Core\Core;
+use RobertGDev\TaLibHybrid\Fallback\Core\CycleIndicators;
+use RobertGDev\TaLibHybrid\Fallback\Core\MathOperators;
+use RobertGDev\TaLibHybrid\Fallback\Core\MathTransform;
+use RobertGDev\TaLibHybrid\Fallback\Core\MomentumIndicators;
+use RobertGDev\TaLibHybrid\Fallback\Core\OverlapStudies;
+use RobertGDev\TaLibHybrid\Fallback\Core\PatternRecognition;
+use RobertGDev\TaLibHybrid\Fallback\Core\PriceTransform;
+use RobertGDev\TaLibHybrid\Fallback\Core\StatisticFunctions;
+use RobertGDev\TaLibHybrid\Fallback\Core\VolatilityIndicators;
+use RobertGDev\TaLibHybrid\Fallback\Core\VolumeIndicators;
 
 class FallbackBackend implements BackendInterface
 {

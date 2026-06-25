@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use robertgdev\TaLibHybrid\Backend\ExtensionBackend;
+use RobertGDev\TaLibHybrid\Backend\ExtensionBackend;
 
 describe('ExtensionBackend basic functionality', function () {
     test('sma returns correct results', function () {

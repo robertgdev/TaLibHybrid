@@ -2,6 +2,6 @@
 
 declare(strict_types=1);
 
-namespace robertgdev\TaLibHybrid\Exception;
+namespace RobertGDev\TaLibHybrid\Exception;
 
 class TaLibInputException extends TaLibException {}
