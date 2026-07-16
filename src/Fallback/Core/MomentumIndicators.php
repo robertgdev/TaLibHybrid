@@ -11,6 +11,13 @@ use RobertGDev\TaLibHybrid\Fallback\Classes\MoneyFlow;
 
 class MomentumIndicators extends Core
 {
+    /**
+     * @param array<int, float|int|null> $inHigh
+     * @param array<int, float|int|null> $inLow
+     * @param array<int, float|int|null> $inClose
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function adx(int $startIdx, int $endIdx, array $inHigh, array $inLow, array $inClose, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -192,6 +199,13 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inHigh
+     * @param array<int, float|int|null> $inLow
+     * @param array<int, float|int|null> $inClose
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function adxr(int $startIdx, int $endIdx, array $inHigh, array $inLow, array $inClose, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -230,6 +244,11 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function apo(int $startIdx, int $endIdx, array $inReal, int $optInFastPeriod, int $optInSlowPeriod, int $optInMAType, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -250,6 +269,13 @@ class MomentumIndicators extends Core
         return static::TA_INT_PO($startIdx, $endIdx, $inReal, $optInFastPeriod, $optInSlowPeriod, $optInMAType, $outBegIdx, $outNBElement, $outReal, $tempBuffer, false);
     }
 
+    /**
+     * @param array<int, float|int|null> $inHigh
+     * @param array<int, float|int|null> $inLow
+     * @param  array<int, float|int|null> $outAroonDown
+     * @param  array<int, float|int|null> $outAroonUp
+     * @return int
+     */
     public static function aroon(int $startIdx, int $endIdx, array $inHigh, array $inLow, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outAroonDown, array &$outAroonUp): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -322,6 +348,12 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inHigh
+     * @param array<int, float|int|null> $inLow
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function aroonOsc(int $startIdx, int $endIdx, array $inHigh, array $inLow, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -394,6 +426,14 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inOpen
+     * @param array<int, float|int|null> $inHigh
+     * @param array<int, float|int|null> $inLow
+     * @param array<int, float|int|null> $inClose
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function bop(int $startIdx, int $endIdx, array $inOpen, array $inHigh, array $inLow, array $inClose, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -414,6 +454,13 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inHigh
+     * @param array<int, float|int|null> $inLow
+     * @param array<int, float|int|null> $inClose
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function cci(int $startIdx, int $endIdx, array $inHigh, array $inLow, array $inClose, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -483,6 +530,11 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function cmo(int $startIdx, int $endIdx, array $inReal, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -603,6 +655,13 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inHigh
+     * @param array<int, float|int|null> $inLow
+     * @param array<int, float|int|null> $inClose
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function dx(int $startIdx, int $endIdx, array $inHigh, array $inLow, array $inClose, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -750,6 +809,12 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inOpen
+     * @param array<int, float|int|null> $inClose
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function imi(int $startIdx, int $endIdx, array $inOpen, array $inClose, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -798,6 +863,13 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outMACD
+     * @param  array<int, float|int|null> $outMACDSignal
+     * @param  array<int, float|int|null> $outMACDHist
+     * @return int
+     */
     public static function macd(
         int $startIdx,
         int $endIdx,
@@ -845,6 +917,13 @@ class MomentumIndicators extends Core
         );
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outMACD
+     * @param  array<int, float|int|null> $outMACDSignal
+     * @param  array<int, float|int|null> $outMACDHist
+     * @return int
+     */
     public static function macdExt(
         int $startIdx,
         int $endIdx,
@@ -982,6 +1061,13 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outMACD
+     * @param  array<int, float|int|null> $outMACDSignal
+     * @param  array<int, float|int|null> $outMACDHist
+     * @return int
+     */
     public static function macdFix(
         int $startIdx,
         int $endIdx,
@@ -1017,6 +1103,14 @@ class MomentumIndicators extends Core
         );
     }
 
+    /**
+     * @param array<int, float|int|null> $inHigh
+     * @param array<int, float|int|null> $inLow
+     * @param array<int, float|int|null> $inClose
+     * @param array<int, float|int|null> $inVolume
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function mfi(
         int $startIdx,
         int $endIdx,
@@ -1158,6 +1252,13 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inHigh
+     * @param array<int, float|int|null> $inLow
+     * @param array<int, float|int|null> $inClose
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function minusDI(int $startIdx, int $endIdx, array $inHigh, array $inLow, array $inClose, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -1327,6 +1428,12 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inHigh
+     * @param array<int, float|int|null> $inLow
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function minusDM(int $startIdx, int $endIdx, array $inHigh, array $inLow, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -1429,6 +1536,11 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function mom(int $startIdx, int $endIdx, array $inReal, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -1460,6 +1572,13 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inHigh
+     * @param array<int, float|int|null> $inLow
+     * @param array<int, float|int|null> $inClose
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function plusDI(int $startIdx, int $endIdx, array $inHigh, array $inLow, array $inClose, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -1629,6 +1748,12 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inHigh
+     * @param array<int, float|int|null> $inLow
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function plusDM(int $startIdx, int $endIdx, array $inHigh, array $inLow, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -1731,6 +1856,11 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function ppo(int $startIdx, int $endIdx, array $inReal, int $optInFastPeriod, int $optInSlowPeriod, int $optInMAType, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -1763,6 +1893,11 @@ class MomentumIndicators extends Core
         );
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function roc(int $startIdx, int $endIdx, array $inReal, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -1800,6 +1935,11 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function rocP(int $startIdx, int $endIdx, array $inReal, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -1837,6 +1977,11 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function rocR(int $startIdx, int $endIdx, array $inReal, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -1874,6 +2019,11 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function rocR100(int $startIdx, int $endIdx, array $inReal, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -1911,6 +2061,11 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function rsi(int $startIdx, int $endIdx, array $inReal, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -2031,6 +2186,14 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inHigh
+     * @param array<int, float|int|null> $inLow
+     * @param array<int, float|int|null> $inClose
+     * @param  array<int, float|int|null> $outSlowK
+     * @param  array<int, float|int|null> $outSlowD
+     * @return int
+     */
     public static function stoch(
         int $startIdx,
         int $endIdx,
@@ -2178,6 +2341,14 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inHigh
+     * @param array<int, float|int|null> $inLow
+     * @param array<int, float|int|null> $inClose
+     * @param  array<int, float|int|null> $outFastK
+     * @param  array<int, float|int|null> $outFastD
+     * @return int
+     */
     public static function stochF(
         int $startIdx,
         int $endIdx,
@@ -2301,6 +2472,12 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outFastK
+     * @param  array<int, float|int|null> $outFastD
+     * @return int
+     */
     public static function stochRsi(
         int $startIdx,
         int $endIdx,
@@ -2386,6 +2563,11 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function trix(int $startIdx, int $endIdx, array $inReal, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -2485,6 +2667,13 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inHigh
+     * @param array<int, float|int|null> $inLow
+     * @param array<int, float|int|null> $inClose
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function ultOsc(
         int $startIdx,
         int $endIdx,
@@ -2708,6 +2897,13 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inHigh
+     * @param array<int, float|int|null> $inLow
+     * @param array<int, float|int|null> $inClose
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function willR(int $startIdx, int $endIdx, array $inHigh, array $inLow, array $inClose, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -2785,3 +2981,4 @@ class MomentumIndicators extends Core
         return ReturnCode::Success->value;
     }
 }
+

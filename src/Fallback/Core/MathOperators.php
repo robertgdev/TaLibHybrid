@@ -8,6 +8,12 @@ use RobertGDev\TaLibHybrid\Enum\ReturnCode;
 
 class MathOperators extends Core
 {
+    /**
+     * @param array<int, float|int|null> $inReal0
+     * @param array<int, float|int|null> $inReal1
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function add(int $startIdx, int $endIdx, array $inReal0, array $inReal1, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -22,6 +28,12 @@ class MathOperators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal0
+     * @param array<int, float|int|null> $inReal1
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function div(int $startIdx, int $endIdx, array $inReal0, array $inReal1, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -36,6 +48,11 @@ class MathOperators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function max(int $startIdx, int $endIdx, array $inReal, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -88,6 +105,11 @@ class MathOperators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outInteger
+     * @return int
+     */
     public static function maxIndex(int $startIdx, int $endIdx, array $inReal, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outInteger): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -140,6 +162,11 @@ class MathOperators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function min(int $startIdx, int $endIdx, array $inReal, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -192,6 +219,11 @@ class MathOperators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outInteger
+     * @return int
+     */
     public static function minIndex(int $startIdx, int $endIdx, array $inReal, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outInteger): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -244,6 +276,12 @@ class MathOperators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outMin
+     * @param  array<int, float|int|null> $outMax
+     * @return int
+     */
     public static function minMax(int $startIdx, int $endIdx, array $inReal, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outMin, array &$outMax): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -315,6 +353,12 @@ class MathOperators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outMinIdx
+     * @param  array<int, float|int|null> $outMaxIdx
+     * @return int
+     */
     public static function minMaxIndex(int $startIdx, int $endIdx, array $inReal, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outMinIdx, array &$outMaxIdx): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -386,6 +430,12 @@ class MathOperators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal0
+     * @param array<int, float|int|null> $inReal1
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function mult(int $startIdx, int $endIdx, array $inReal0, array $inReal1, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -400,6 +450,12 @@ class MathOperators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal0
+     * @param array<int, float|int|null> $inReal1
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function sub(int $startIdx, int $endIdx, array $inReal0, array $inReal1, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -414,6 +470,11 @@ class MathOperators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function sum(int $startIdx, int $endIdx, array $inReal, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -437,10 +498,8 @@ class MathOperators extends Core
         $periodTotal = 0;
         $trailingIdx = $startIdx - $lookbackTotal;
         $i = $trailingIdx;
-        if ($optInTimePeriod > 1) {
-            while ($i < $startIdx) {
-                $periodTotal += $inReal[$i++];
-            }
+        while ($i < $startIdx) {
+            $periodTotal += $inReal[$i++];
         }
         $outIdx = 0;
         do {
