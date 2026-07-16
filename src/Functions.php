@@ -21,10 +21,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-      * @return array<string, array<int, float|int|null>>
+     * Acceleration Bands.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<string,array<int,float|int|null>>
      */
     function ta_accbands(array $high, array $low, array $close, int $period = 20): array
     {
@@ -32,8 +36,15 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-      * @return array<string, array<int, float|int|null>>
+     * Bollinger Bands.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     * @param float $nbDevUp Number of standard deviations for the upper band.
+     * @param float $nbDevDn Number of standard deviations for the lower band.
+     * @param int $maType Type of moving average.
+     *
+     * @return array<string,array<int,float|int|null>>
      */
     function ta_bbands(array $values, int $period = 5, float $nbDevUp = 2.0, float $nbDevDn = 2.0, int $maType = 0): array
     {
@@ -41,8 +52,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Double Exponential Moving Average.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_dema(array $values, int $period): array
     {
@@ -50,8 +65,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Exponential Moving Average.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_ema(array $values, int $period): array
     {
@@ -59,8 +78,11 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Hilbert Transform - Instantaneous Trendline.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     *
+     * @return array<int,float|int|null>
      */
     function ta_ht_trendline(array $values): array
     {
@@ -68,8 +90,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Kaufman Adaptive Moving Average.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_kama(array $values, int $period): array
     {
@@ -77,8 +103,13 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Moving Average.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     * @param int $maType Type of moving average.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_ma(array $values, int $period = 30, int $maType = 0): array
     {
@@ -86,8 +117,13 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-      * @return array<string, array<int, float|int|null>>
+     * MESA Adaptive Moving Average.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param float $fastLimit Fast limit.
+     * @param float $slowLimit Slow limit.
+     *
+     * @return array<string,array<int,float|int|null>>
      */
     function ta_mama(array $values, float $fastLimit = 0.5, float $slowLimit = 0.05): array
     {
@@ -95,9 +131,15 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @param array<int, int> $periods
-     * @return array<int, float|int|null>
+     * Moving Average with Variable Period.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param array<int,int> $periods Variable periods per data point.
+     * @param positive-int $minPeriod Minimum period.
+     * @param positive-int $maxPeriod Maximum period.
+     * @param int $maType Type of moving average.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_mavp(array $values, array $periods, int $minPeriod = 2, int $maxPeriod = 30, int $maType = 0): array
     {
@@ -105,8 +147,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * MidPoint over period.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_midpoint(array $values, int $period = 14): array
     {
@@ -114,9 +160,13 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @return array<int, float|int|null>
+     * Midpoint Price over period.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_midprice(array $high, array $low, int $period = 14): array
     {
@@ -124,9 +174,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @return array<int, float|int|null>
+     * Parabolic SAR.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param float $acceleration Acceleration factor.
+     * @param float $maximum Maximum value.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_sar(array $high, array $low, float $acceleration = 0.02, float $maximum = 0.20): array
     {
@@ -134,9 +189,20 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @return array<int, float|int|null>
+     * Parabolic SAR - Extended.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param float $startValue Start value.
+     * @param float $offsetOnReverse Offset on reverse.
+     * @param float $accelerationInitLong Acceleration init long.
+     * @param float $accelerationLong Acceleration long.
+     * @param float $accelerationMaxLong Acceleration max long.
+     * @param float $accelerationInitShort Acceleration init short.
+     * @param float $accelerationShort Acceleration short.
+     * @param float $accelerationMaxShort Acceleration max short.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_sarext(array $high, array $low, float $startValue = 0.0, float $offsetOnReverse = 0.0, float $accelerationInitLong = 0.02, float $accelerationLong = 0.02, float $accelerationMaxLong = 0.20, float $accelerationInitShort = 0.02, float $accelerationShort = 0.02, float $accelerationMaxShort = 0.20): array
     {
@@ -144,8 +210,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Simple Moving Average.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_sma(array $values, int $period): array
     {
@@ -153,8 +223,13 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Triple Exponential Moving Average (T3).
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     * @param float $vFactor Volume factor.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_t3(array $values, int $period, float $vFactor = 0.7): array
     {
@@ -162,8 +237,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Triple Exponential Moving Average.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_tema(array $values, int $period): array
     {
@@ -171,8 +250,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Triangular Moving Average.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_trima(array $values, int $period): array
     {
@@ -180,8 +263,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Weighted Moving Average.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_wma(array $values, int $period): array
     {
@@ -189,10 +276,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Average True Range.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_atr(array $high, array $low, array $close, int $period = 14): array
     {
@@ -200,10 +291,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Normalized Average True Range.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_natr(array $high, array $low, array $close, int $period = 14): array
     {
@@ -211,10 +306,13 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * True Range.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_trange(array $high, array $low, array $close): array
     {
@@ -222,10 +320,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Average Directional Movement Index.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_adx(array $high, array $low, array $close, int $period = 14): array
     {
@@ -233,10 +335,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Average Directional Movement Index Rating.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_adxr(array $high, array $low, array $close, int $period = 14): array
     {
@@ -244,8 +350,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Absolute Price Oscillator.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $fastPeriod Number of periods for the fast MA.
+     * @param positive-int $slowPeriod Number of periods for the slow MA.
+     * @param int $maType Type of moving average.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_apo(array $values, int $fastPeriod = 12, int $slowPeriod = 26, int $maType = 0): array
     {
@@ -253,9 +365,13 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-      * @return array<string, array<int, float|int|null>>
+     * Aroon.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<string,array<int,float|int|null>>
      */
     function ta_aroon(array $high, array $low, int $period = 14): array
     {
@@ -263,9 +379,13 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @return array<int, float|int|null>
+     * Aroon Oscillator.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_aroonosc(array $high, array $low, int $period = 14): array
     {
@@ -273,11 +393,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Balance Of Power.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_bop(array $open, array $high, array $low, array $close): array
     {
@@ -285,10 +408,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Commodity Channel Index.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cci(array $high, array $low, array $close, int $period = 14): array
     {
@@ -296,8 +423,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Chande Momentum Oscillator.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cmo(array $values, int $period = 14): array
     {
@@ -305,10 +436,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Directional Movement Index.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_dx(array $high, array $low, array $close, int $period = 14): array
     {
@@ -316,9 +451,13 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Intraday Momentum Index.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_imi(array $open, array $close, int $period = 14): array
     {
@@ -326,8 +465,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-      * @return array<string, array<int, float|int|null>>
+     * Moving Average Convergence/Divergence.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $fastPeriod Number of periods for the fast MA.
+     * @param positive-int $slowPeriod Number of periods for the slow MA.
+     * @param positive-int $signalPeriod Number of periods for the signal line.
+     *
+     * @return array<string,array<int,float|int|null>>
      */
     function ta_macd(array $values, int $fastPeriod = 12, int $slowPeriod = 26, int $signalPeriod = 9): array
     {
@@ -335,8 +480,17 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-      * @return array<string, array<int, float|int|null>>
+     * MACD with controllable MA type.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $fastPeriod Number of periods for the fast MA.
+     * @param int $fastMaType Type of moving average for fast MA.
+     * @param positive-int $slowPeriod Number of periods for the slow MA.
+     * @param int $slowMaType Type of moving average for slow MA.
+     * @param positive-int $signalPeriod Number of periods for the signal line.
+     * @param int $signalMaType Type of moving average for signal line.
+     *
+     * @return array<string,array<int,float|int|null>>
      */
     function ta_macdext(array $values, int $fastPeriod = 12, int $fastMaType = 0, int $slowPeriod = 26, int $slowMaType = 0, int $signalPeriod = 9, int $signalMaType = 0): array
     {
@@ -344,8 +498,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-      * @return array<string, array<int, float|int|null>>
+     * MACD Fix 12/26.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $signalPeriod Number of periods for the signal line.
+     *
+     * @return array<string,array<int,float|int|null>>
      */
     function ta_macdfix(array $values, int $signalPeriod = 9): array
     {
@@ -353,11 +511,15 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @param array<int, float|int|null> $volume
-     * @return array<int, float|int|null>
+     * Money Flow Index.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     * @param array<int,float|int|null> $volume
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_mfi(array $high, array $low, array $close, array $volume, int $period = 14): array
     {
@@ -365,10 +527,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Minus Directional Indicator.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_minus_di(array $high, array $low, array $close, int $period = 14): array
     {
@@ -376,9 +542,13 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @return array<int, float|int|null>
+     * Minus Directional Movement.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_minus_dm(array $high, array $low, int $period = 14): array
     {
@@ -386,8 +556,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Momentum.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_mom(array $values, int $period = 10): array
     {
@@ -395,10 +569,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Plus Directional Indicator.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_plus_di(array $high, array $low, array $close, int $period = 14): array
     {
@@ -406,9 +584,13 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @return array<int, float|int|null>
+     * Plus Directional Movement.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_plus_dm(array $high, array $low, int $period = 14): array
     {
@@ -416,8 +598,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Percentage Price Oscillator.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $fastPeriod Number of periods for the fast MA.
+     * @param positive-int $slowPeriod Number of periods for the slow MA.
+     * @param int $maType Type of moving average.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_ppo(array $values, int $fastPeriod = 12, int $slowPeriod = 26, int $maType = 0): array
     {
@@ -425,8 +613,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Rate of Change.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_roc(array $values, int $period = 10): array
     {
@@ -434,8 +626,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Rate of Change Percentage.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_rocp(array $values, int $period = 10): array
     {
@@ -443,8 +639,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Rate of Change Ratio.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_rocr(array $values, int $period = 10): array
     {
@@ -452,8 +652,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Rate of Change Ratio 100 scale.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_rocr100(array $values, int $period = 10): array
     {
@@ -461,8 +665,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Relative Strength Index.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_rsi(array $values, int $period = 14): array
     {
@@ -470,10 +678,18 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-      * @return array<string, array<int, float|int|null>>
+     * Stochastic Oscillator.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     * @param positive-int $fastKPeriod Number of periods for the fast %K.
+     * @param positive-int $slowKPeriod Number of periods for the slow %K.
+     * @param int $slowKMaType Type of moving average for slow %K.
+     * @param positive-int $slowDPeriod Number of periods for the slow %D.
+     * @param int $slowDMaType Type of moving average for slow %D.
+     *
+     * @return array<string,array<int,float|int|null>>
      */
     function ta_stoch(array $high, array $low, array $close, int $fastKPeriod = 5, int $slowKPeriod = 3, int $slowKMaType = 0, int $slowDPeriod = 3, int $slowDMaType = 0): array
     {
@@ -481,10 +697,16 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-      * @return array<string, array<int, float|int|null>>
+     * Stochastic Fast.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     * @param positive-int $fastKPeriod Number of periods for the fast %K.
+     * @param positive-int $fastDPeriod Number of periods for the fast %D.
+     * @param int $fastDMaType Type of moving average for fast %D.
+     *
+     * @return array<string,array<int,float|int|null>>
      */
     function ta_stochf(array $high, array $low, array $close, int $fastKPeriod = 5, int $fastDPeriod = 3, int $fastDMaType = 0): array
     {
@@ -492,8 +714,15 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-      * @return array<string, array<int, float|int|null>>
+     * Stochastic Relative Strength Index.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     * @param positive-int $fastKPeriod Number of periods for the fast %K.
+     * @param positive-int $fastDPeriod Number of periods for the fast %D.
+     * @param int $fastDMaType Type of moving average for fast %D.
+     *
+     * @return array<string,array<int,float|int|null>>
      */
     function ta_stochrsi(array $values, int $period = 14, int $fastKPeriod = 5, int $fastDPeriod = 3, int $fastDMaType = 0): array
     {
@@ -501,8 +730,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Triple Exponential Moving Average (TRIX).
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_trix(array $values, int $period = 30): array
     {
@@ -510,10 +743,16 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Ultimate Oscillator.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     * @param positive-int $period1 Number of periods for the first time frame.
+     * @param positive-int $period2 Number of periods for the second time frame.
+     * @param positive-int $period3 Number of periods for the third time frame.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_ultosc(array $high, array $low, array $close, int $period1 = 7, int $period2 = 14, int $period3 = 28): array
     {
@@ -521,10 +760,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Williams %R.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_willr(array $high, array $low, array $close, int $period = 14): array
     {
@@ -532,8 +775,11 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Hilbert Transform - Dominant Cycle Period.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     *
+     * @return array<int,float|int|null>
      */
     function ta_ht_dcperiod(array $values): array
     {
@@ -541,8 +787,11 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Hilbert Transform - Dominant Cycle Phase.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     *
+     * @return array<int,float|int|null>
      */
     function ta_ht_dcphase(array $values): array
     {
@@ -550,8 +799,11 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-      * @return array<string, array<int, float|int|null>>
+     * Hilbert Transform - Phasor Components.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     *
+     * @return array<string,array<int,float|int|null>>
      */
     function ta_ht_phasor(array $values): array
     {
@@ -559,8 +811,11 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-      * @return array<string, array<int, float|int|null>>
+     * Hilbert Transform - SineWave.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     *
+     * @return array<string,array<int,float|int|null>>
      */
     function ta_ht_sine(array $values): array
     {
@@ -568,8 +823,11 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Hilbert Transform - Trend vs Cycle Mode.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     *
+     * @return array<int,float|int|null>
      */
     function ta_ht_trendmode(array $values): array
     {
@@ -577,11 +835,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @param array<int, float|int|null> $volume
-     * @return array<int, float|int|null>
+     * Chaikin A/D Line.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     * @param array<int,float|int|null> $volume
+     *
+     * @return array<int,float|int|null>
      */
     function ta_ad(array $high, array $low, array $close, array $volume): array
     {
@@ -589,11 +850,16 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @param array<int, float|int|null> $volume
-     * @return array<int, float|int|null>
+     * Chaikin A/D Oscillator.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     * @param array<int,float|int|null> $volume
+     * @param positive-int $fastPeriod Number of periods for the fast MA.
+     * @param positive-int $slowPeriod Number of periods for the slow MA.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_adosc(array $high, array $low, array $close, array $volume, int $fastPeriod = 3, int $slowPeriod = 10): array
     {
@@ -601,9 +867,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @param array<int, float|int|null> $volume
-     * @return array<int, float|int|null>
+     * On Balance Volume.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param array<int,float|int|null> $volume
+     *
+     * @return array<int,float|int|null>
      */
     function ta_obv(array $values, array $volume): array
     {
@@ -611,11 +880,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Two Crows pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdl2crows(array $open, array $high, array $low, array $close): array
     {
@@ -623,11 +895,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Three Black Crows pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdl3blackcrows(array $open, array $high, array $low, array $close): array
     {
@@ -635,11 +910,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Three Inside Up/Down pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdl3inside(array $open, array $high, array $low, array $close): array
     {
@@ -647,11 +925,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Three-Line Strike pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdl3linestrike(array $open, array $high, array $low, array $close): array
     {
@@ -659,11 +940,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Three Outside Up/Down pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdl3outside(array $open, array $high, array $low, array $close): array
     {
@@ -671,11 +955,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Three Stars In The South pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdl3starsinsouth(array $open, array $high, array $low, array $close): array
     {
@@ -683,11 +970,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Three Advancing White Soldiers pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdl3whitesoldiers(array $open, array $high, array $low, array $close): array
     {
@@ -695,11 +985,15 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Abandoned Baby pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     * @param float $penetration Penetration factor.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlabandonedbaby(array $open, array $high, array $low, array $close, float $penetration = 0.0): array
     {
@@ -707,11 +1001,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Advance Block pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdladvanceblock(array $open, array $high, array $low, array $close): array
     {
@@ -719,11 +1016,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Belt-hold pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlbelthold(array $open, array $high, array $low, array $close): array
     {
@@ -731,11 +1031,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Breakaway pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlbreakaway(array $open, array $high, array $low, array $close): array
     {
@@ -743,11 +1046,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Closing Marubozu pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlclosingmarubozu(array $open, array $high, array $low, array $close): array
     {
@@ -755,11 +1061,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Concealing Baby Swallow pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlconcealbabyswall(array $open, array $high, array $low, array $close): array
     {
@@ -767,11 +1076,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Counterattack pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlcounterattack(array $open, array $high, array $low, array $close): array
     {
@@ -779,11 +1091,15 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Dark Cloud Cover pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     * @param float $penetration Penetration factor.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdldarkcloudcover(array $open, array $high, array $low, array $close, float $penetration = 0.0): array
     {
@@ -791,11 +1107,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Doji pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdldoji(array $open, array $high, array $low, array $close): array
     {
@@ -803,11 +1122,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Doji Star pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdldojistar(array $open, array $high, array $low, array $close): array
     {
@@ -815,11 +1137,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Dragonfly Doji pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdldragonflydoji(array $open, array $high, array $low, array $close): array
     {
@@ -827,11 +1152,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Engulfing pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlengulfing(array $open, array $high, array $low, array $close): array
     {
@@ -839,11 +1167,15 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Evening Doji Star pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     * @param float $penetration Penetration factor.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdleveningdojistar(array $open, array $high, array $low, array $close, float $penetration = 0.0): array
     {
@@ -851,11 +1183,15 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Evening Star pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     * @param float $penetration Penetration factor.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdleveningstar(array $open, array $high, array $low, array $close, float $penetration = 0.0): array
     {
@@ -863,11 +1199,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Up/Down-gap side-by-side white lines pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlgapsidesidewhite(array $open, array $high, array $low, array $close): array
     {
@@ -875,11 +1214,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Gravestone Doji pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlgravestonedoji(array $open, array $high, array $low, array $close): array
     {
@@ -887,11 +1229,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Hammer pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlhammer(array $open, array $high, array $low, array $close): array
     {
@@ -899,11 +1244,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Hanging Man pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlhangingman(array $open, array $high, array $low, array $close): array
     {
@@ -911,11 +1259,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Harami pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlharami(array $open, array $high, array $low, array $close): array
     {
@@ -923,11 +1274,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Harami Cross pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlharamicross(array $open, array $high, array $low, array $close): array
     {
@@ -935,11 +1289,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * High-Wave Candle pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlhighwave(array $open, array $high, array $low, array $close): array
     {
@@ -947,11 +1304,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Hikkake pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlhikkake(array $open, array $high, array $low, array $close): array
     {
@@ -959,11 +1319,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Modified Hikkake pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlhikkakemod(array $open, array $high, array $low, array $close): array
     {
@@ -971,11 +1334,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Homing Pigeon pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlhomingpigeon(array $open, array $high, array $low, array $close): array
     {
@@ -983,11 +1349,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Identical Three Crows pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlidentical3crows(array $open, array $high, array $low, array $close): array
     {
@@ -995,11 +1364,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * In-Neck pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlinneck(array $open, array $high, array $low, array $close): array
     {
@@ -1007,11 +1379,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Inverted Hammer pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlinvertedhammer(array $open, array $high, array $low, array $close): array
     {
@@ -1019,11 +1394,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Kicking pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlkicking(array $open, array $high, array $low, array $close): array
     {
@@ -1031,11 +1409,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Kicking - bull/bear determined by the longer marubozu pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlkickingbylength(array $open, array $high, array $low, array $close): array
     {
@@ -1043,11 +1424,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Ladder Bottom pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlladderbottom(array $open, array $high, array $low, array $close): array
     {
@@ -1055,11 +1439,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Long Legged Doji pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdllongleggeddoji(array $open, array $high, array $low, array $close): array
     {
@@ -1067,11 +1454,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Long Line Candle pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdllongline(array $open, array $high, array $low, array $close): array
     {
@@ -1079,11 +1469,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Marubozu pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlmarubozu(array $open, array $high, array $low, array $close): array
     {
@@ -1091,11 +1484,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Matching Low pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlmatchinglow(array $open, array $high, array $low, array $close): array
     {
@@ -1103,11 +1499,15 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Mat Hold pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     * @param float $penetration Penetration factor.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlmathold(array $open, array $high, array $low, array $close, float $penetration = 0.0): array
     {
@@ -1115,11 +1515,15 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Morning Doji Star pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     * @param float $penetration Penetration factor.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlmorningdojistar(array $open, array $high, array $low, array $close, float $penetration = 0.0): array
     {
@@ -1127,11 +1531,15 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Morning Star pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     * @param float $penetration Penetration factor.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlmorningstar(array $open, array $high, array $low, array $close, float $penetration = 0.0): array
     {
@@ -1139,11 +1547,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * On-Neck pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlonneck(array $open, array $high, array $low, array $close): array
     {
@@ -1151,11 +1562,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Piercing pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlpiercing(array $open, array $high, array $low, array $close): array
     {
@@ -1163,11 +1577,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Rickshaw Man pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlrickshawman(array $open, array $high, array $low, array $close): array
     {
@@ -1175,11 +1592,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Rising/Falling Three Methods pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlrisefall3methods(array $open, array $high, array $low, array $close): array
     {
@@ -1187,11 +1607,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Separating Lines pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlseparatinglines(array $open, array $high, array $low, array $close): array
     {
@@ -1199,11 +1622,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Shooting Star pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlshootingstar(array $open, array $high, array $low, array $close): array
     {
@@ -1211,11 +1637,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Short Line Candle pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlshortline(array $open, array $high, array $low, array $close): array
     {
@@ -1223,11 +1652,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Spinning Top pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlspinningtop(array $open, array $high, array $low, array $close): array
     {
@@ -1235,11 +1667,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Stalled Pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlstalledpattern(array $open, array $high, array $low, array $close): array
     {
@@ -1247,11 +1682,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Stick Sandwich pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlsticksandwich(array $open, array $high, array $low, array $close): array
     {
@@ -1259,11 +1697,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Takuri (Dragonfly Doji with very long lower shadow) pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdltakuri(array $open, array $high, array $low, array $close): array
     {
@@ -1271,11 +1712,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Tasuki Gap pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdltasukigap(array $open, array $high, array $low, array $close): array
     {
@@ -1283,11 +1727,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Thrusting pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlthrusting(array $open, array $high, array $low, array $close): array
     {
@@ -1295,11 +1742,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Tristar pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdltristar(array $open, array $high, array $low, array $close): array
     {
@@ -1307,11 +1757,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Unique 3 River pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlunique3river(array $open, array $high, array $low, array $close): array
     {
@@ -1319,11 +1772,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Upside Gap Two Crows pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlupsidegap2crows(array $open, array $high, array $low, array $close): array
     {
@@ -1331,11 +1787,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Upside/Downside Gap Three Methods pattern recognition.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cdlxsidegap3methods(array $open, array $high, array $low, array $close): array
     {
@@ -1343,9 +1802,13 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $valuesA
-     * @param array<int, float|int|null> $valuesB
-     * @return array<int, float|int|null>
+     * Beta.
+     *
+     * @param array<int,float|int|null> $values Source data seriesA
+     * @param array<int,float|int|null> $values Source data seriesB
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_beta(array $valuesA, array $valuesB, int $period = 5): array
     {
@@ -1353,9 +1816,13 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $valuesA
-     * @param array<int, float|int|null> $valuesB
-     * @return array<int, float|int|null>
+     * Pearson's Correlation Coefficient.
+     *
+     * @param array<int,float|int|null> $values Source data seriesA
+     * @param array<int,float|int|null> $values Source data seriesB
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_correl(array $valuesA, array $valuesB, int $period = 30): array
     {
@@ -1363,8 +1830,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Linear Regression.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_linearreg(array $values, int $period = 14): array
     {
@@ -1372,8 +1843,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Linear Regression Angle.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_linearreg_angle(array $values, int $period = 14): array
     {
@@ -1381,8 +1856,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Linear Regression Intercept.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_linearreg_intercept(array $values, int $period = 14): array
     {
@@ -1390,8 +1869,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Linear Regression Slope.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_linearreg_slope(array $values, int $period = 14): array
     {
@@ -1399,8 +1882,13 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Standard Deviation.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     * @param float $nbDev Number of standard deviations.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_stddev(array $values, int $period = 5, float $nbDev = 1.0): array
     {
@@ -1408,8 +1896,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Time Series Forecast.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_tsf(array $values, int $period = 14): array
     {
@@ -1417,8 +1909,13 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Variance.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     * @param float $nbDev Number of deviations.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_var(array $values, int $period = 5, float $nbDev = 1.0): array
     {
@@ -1426,11 +1923,14 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $open
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Average Price.
+     *
+     * @param array<int,float|int|null> $open Input open price series.
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_avgprice(array $open, array $high, array $low, array $close): array
     {
@@ -1438,8 +1938,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Average Deviation.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_avgdev(array $values, int $period = 14): array
     {
@@ -1447,9 +1951,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @return array<int, float|int|null>
+     * Median Price.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_medprice(array $high, array $low): array
     {
@@ -1457,10 +1964,13 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Typical Price.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_typprice(array $high, array $low, array $close): array
     {
@@ -1468,10 +1978,13 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $high
-     * @param array<int, float|int|null> $low
-     * @param array<int, float|int|null> $close
-     * @return array<int, float|int|null>
+     * Weighted Close Price.
+     *
+     * @param array<int,float|int|null> $high Input high price series.
+     * @param array<int,float|int|null> $low Input low price series.
+     * @param array<int,float|int|null> $close Input close price series.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_wclprice(array $high, array $low, array $close): array
     {
@@ -1479,8 +1992,11 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Vector Trigonometric Arc Cosine.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     *
+     * @return array<int,float|int|null>
      */
     function ta_acos(array $values): array
     {
@@ -1488,8 +2004,11 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Vector Trigonometric Arc Sine.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     *
+     * @return array<int,float|int|null>
      */
     function ta_asin(array $values): array
     {
@@ -1497,8 +2016,11 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Vector Trigonometric Arc Tangent.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     *
+     * @return array<int,float|int|null>
      */
     function ta_atan(array $values): array
     {
@@ -1506,8 +2028,11 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Vector Ceil.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     *
+     * @return array<int,float|int|null>
      */
     function ta_ceil(array $values): array
     {
@@ -1515,8 +2040,11 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Vector Trigonometric Cosine.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cos(array $values): array
     {
@@ -1524,8 +2052,11 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Vector Trigonometric Hyperbolic Cosine.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     *
+     * @return array<int,float|int|null>
      */
     function ta_cosh(array $values): array
     {
@@ -1533,8 +2064,11 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Vector Exponential.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     *
+     * @return array<int,float|int|null>
      */
     function ta_exp(array $values): array
     {
@@ -1542,8 +2076,11 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Vector Floor.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     *
+     * @return array<int,float|int|null>
      */
     function ta_floor(array $values): array
     {
@@ -1551,8 +2088,11 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Vector Natural Log.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     *
+     * @return array<int,float|int|null>
      */
     function ta_ln(array $values): array
     {
@@ -1560,8 +2100,11 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Vector Base-10 Log.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     *
+     * @return array<int,float|int|null>
      */
     function ta_log10(array $values): array
     {
@@ -1569,8 +2112,11 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Vector Trigonometric Sine.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     *
+     * @return array<int,float|int|null>
      */
     function ta_sin(array $values): array
     {
@@ -1578,8 +2124,11 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Vector Trigonometric Hyperbolic Sine.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     *
+     * @return array<int,float|int|null>
      */
     function ta_sinh(array $values): array
     {
@@ -1587,8 +2136,11 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Vector Square Root.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     *
+     * @return array<int,float|int|null>
      */
     function ta_sqrt(array $values): array
     {
@@ -1596,8 +2148,11 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Vector Trigonometric Tangent.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     *
+     * @return array<int,float|int|null>
      */
     function ta_tan(array $values): array
     {
@@ -1605,8 +2160,11 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Vector Trigonometric Hyperbolic Tangent.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     *
+     * @return array<int,float|int|null>
      */
     function ta_tanh(array $values): array
     {
@@ -1614,9 +2172,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $valuesA
-     * @param array<int, float|int|null> $valuesB
-     * @return array<int, float|int|null>
+     * Vector Arithmetic Addition.
+     *
+     * @param array<int,float|int|null> $values Source data seriesA
+     * @param array<int,float|int|null> $values Source data seriesB
+     *
+     * @return array<int,float|int|null>
      */
     function ta_add(array $valuesA, array $valuesB): array
     {
@@ -1624,9 +2185,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $valuesA
-     * @param array<int, float|int|null> $valuesB
-     * @return array<int, float|int|null>
+     * Vector Arithmetic Subtraction.
+     *
+     * @param array<int,float|int|null> $values Source data seriesA
+     * @param array<int,float|int|null> $values Source data seriesB
+     *
+     * @return array<int,float|int|null>
      */
     function ta_sub(array $valuesA, array $valuesB): array
     {
@@ -1634,9 +2198,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $valuesA
-     * @param array<int, float|int|null> $valuesB
-     * @return array<int, float|int|null>
+     * Vector Arithmetic Multiplication.
+     *
+     * @param array<int,float|int|null> $values Source data seriesA
+     * @param array<int,float|int|null> $values Source data seriesB
+     *
+     * @return array<int,float|int|null>
      */
     function ta_mult(array $valuesA, array $valuesB): array
     {
@@ -1644,9 +2211,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $valuesA
-     * @param array<int, float|int|null> $valuesB
-     * @return array<int, float|int|null>
+     * Vector Arithmetic Division.
+     *
+     * @param array<int,float|int|null> $values Source data seriesA
+     * @param array<int,float|int|null> $values Source data seriesB
+     *
+     * @return array<int,float|int|null>
      */
     function ta_div(array $valuesA, array $valuesB): array
     {
@@ -1654,8 +2224,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-     * @return array<int, float|int|null>
+     * Summation.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,float|int|null>
      */
     function ta_sum(array $values, int $period = 30): array
     {
@@ -1663,8 +2237,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-      * @return array<string, array<int, float|int|null>>
+     * Highest value over a specified period.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<string,array<int,float|int|null>>
      */
     function ta_max(array $values, int $period = 30): array
     {
@@ -1672,8 +2250,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-      * @return array<string, array<int, float|int|null>>
+     * Lowest value over a specified period.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<string,array<int,float|int|null>>
      */
     function ta_min(array $values, int $period = 30): array
     {
@@ -1681,8 +2263,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-      * @return array<int, int|null>
+     * Index of highest value over a specified period.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,int|null>
      */
     function ta_maxindex(array $values, int $period = 30): array
     {
@@ -1690,8 +2276,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-      * @return array<int, int|null>
+     * Index of lowest value over a specified period.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<int,int|null>
      */
     function ta_minindex(array $values, int $period = 30): array
     {
@@ -1699,8 +2289,12 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-      * @return array<string, array<int, float|int|null>>
+     * Lowest and highest values over a specified period.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<string,array<int,float|int|null>>
      */
     function ta_minmax(array $values, int $period = 30): array
     {
@@ -1708,12 +2302,15 @@ if (! function_exists('ta_version')) {
     }
 
     /**
-     * @param array<int, float|int|null> $values
-      * @return array<string, array<int, int|null>>
+     * Indexes of lowest and highest values over a specified period.
+     *
+     * @param array<int,float|int|null> $values Source data series
+     * @param positive-int $period Number of periods.
+     *
+     * @return array<string,array<int,int|null>>
      */
     function ta_minmaxindex(array $values, int $period = 30): array
     {
         return TaLibHybrid::minmaxindex($values, $period);
     }
 }
-
