@@ -544,7 +544,7 @@ class TaLibHybrid
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
      * @param array<int,float|int|null> $close Input close price series.
-     * @param array<int,float|int|null> $volume
+     * @param array<int,float|int|null> $volume Input volume data series.
      * @param positive-int $period Number of periods.
      *
      * @return array<int,float|int|null>
@@ -868,7 +868,7 @@ class TaLibHybrid
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
      * @param array<int,float|int|null> $close Input close price series.
-     * @param array<int,float|int|null> $volume
+     * @param array<int,float|int|null> $volume Input volume data series.
      *
      * @return array<int,float|int|null>
      */
@@ -883,7 +883,7 @@ class TaLibHybrid
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
      * @param array<int,float|int|null> $close Input close price series.
-     * @param array<int,float|int|null> $volume
+     * @param array<int,float|int|null> $volume Input volume data series.
      * @param positive-int $fastPeriod Number of periods for the fast MA.
      * @param positive-int $slowPeriod Number of periods for the slow MA.
      *
@@ -898,7 +898,7 @@ class TaLibHybrid
      * On Balance Volume.
      *
      * @param array<int,float|int|null> $values Source data series
-     * @param array<int,float|int|null> $volume
+     * @param array<int,float|int|null> $volume Input volume data series.
      *
      * @return array<int,float|int|null>
      */
