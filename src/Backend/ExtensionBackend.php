@@ -38,6 +38,7 @@ class ExtensionBackend implements BackendInterface
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
      * @param  array<int, float|int|null>  $close
+     * @param  positive-int  $period        Number of periods.
      * @return array<string, array<int, float|int|null>>
      */
     public function accbands(array $high, array $low, array $close, int $period = 20): array
@@ -47,6 +48,10 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int             $period  Number of periods.
+     * @param  float                    $nbDevUp
+     * @param  float                    $nbDevDn
+     * @param  int                      $maType
      * @return array<string, array<int, float|int|null>>
      */
     public function bbands(array $values, int $period = 5, float $nbDevUp = 2.0, float $nbDevDn = 2.0, int $maType = 0): array
@@ -56,6 +61,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function dema(array $values, int $period): array
@@ -65,6 +71,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function ema(array $values, int $period): array
@@ -83,6 +90,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function kama(array $values, int $period): array
@@ -92,6 +100,8 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
+     * @param  int                         $maType
      * @return array<int, float|int|null>
      */
     public function ma(array $values, int $period = 30, int $maType = 0): array
@@ -101,6 +111,8 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  float                       $fastLimit
+     * @param  float                       $slowLimit
      * @return array<string, array<int, float|int|null>>
      */
     public function mama(array $values, float $fastLimit = 0.5, float $slowLimit = 0.05): array
@@ -110,7 +122,10 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
-     * @param  array<int, int>  $periods
+     * @param  array<int, int>             $periods
+     * @param  positive-int                $minPeriod  Minimum period.
+     * @param  positive-int                $maxPeriod  Maximum period.
+     * @param  int                         $maType
      * @return array<int, float|int|null>
      */
     public function mavp(array $values, array $periods, int $minPeriod = 2, int $maxPeriod = 30, int $maType = 0): array
@@ -120,6 +135,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function midpoint(array $values, int $period = 14): array
@@ -130,6 +146,7 @@ class ExtensionBackend implements BackendInterface
     /**
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function midprice(array $high, array $low, int $period = 14): array
@@ -140,6 +157,8 @@ class ExtensionBackend implements BackendInterface
     /**
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
+     * @param  float                       $acceleration
+     * @param  float                       $maximum
      * @return array<int, float|int|null>
      */
     public function sar(array $high, array $low, float $acceleration = 0.02, float $maximum = 0.20): array
@@ -150,6 +169,14 @@ class ExtensionBackend implements BackendInterface
     /**
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
+     * @param  float                       $startValue
+     * @param  float                       $offsetOnReverse
+     * @param  float                       $accelerationInitLong
+     * @param  float                       $accelerationLong
+     * @param  float                       $accelerationMaxLong
+     * @param  float                       $accelerationInitShort
+     * @param  float                       $accelerationShort
+     * @param  float                       $accelerationMaxShort
      * @return array<int, float|int|null>
      */
     public function sarext(array $high, array $low, float $startValue = 0.0, float $offsetOnReverse = 0.0, float $accelerationInitLong = 0.02, float $accelerationLong = 0.02, float $accelerationMaxLong = 0.20, float $accelerationInitShort = 0.02, float $accelerationShort = 0.02, float $accelerationMaxShort = 0.20): array
@@ -159,6 +186,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function sma(array $values, int $period): array
@@ -168,6 +196,8 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
+     * @param  float                       $vFactor
      * @return array<int, float|int|null>
      */
     public function t3(array $values, int $period, float $vFactor = 0.7): array
@@ -177,6 +207,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function tema(array $values, int $period): array
@@ -186,6 +217,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function trima(array $values, int $period): array
@@ -195,6 +227,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function wma(array $values, int $period): array
@@ -206,6 +239,7 @@ class ExtensionBackend implements BackendInterface
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
      * @param  array<int, float|int|null>  $close
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function atr(array $high, array $low, array $close, int $period = 14): array
@@ -217,6 +251,7 @@ class ExtensionBackend implements BackendInterface
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
      * @param  array<int, float|int|null>  $close
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function natr(array $high, array $low, array $close, int $period = 14): array
@@ -239,6 +274,7 @@ class ExtensionBackend implements BackendInterface
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
      * @param  array<int, float|int|null>  $close
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function adx(array $high, array $low, array $close, int $period = 14): array
@@ -250,6 +286,7 @@ class ExtensionBackend implements BackendInterface
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
      * @param  array<int, float|int|null>  $close
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function adxr(array $high, array $low, array $close, int $period = 14): array
@@ -259,6 +296,9 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $fastPeriod  Number of periods for fast moving average.
+     * @param  positive-int                $slowPeriod  Number of periods for slow moving average.
+     * @param  int                         $maType
      * @return array<int, float|int|null>
      */
     public function apo(array $values, int $fastPeriod = 12, int $slowPeriod = 26, int $maType = 0): array
@@ -269,6 +309,7 @@ class ExtensionBackend implements BackendInterface
     /**
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
+     * @param  positive-int                $period  Number of periods.
      * @return array<string, array<int, float|int|null>>
      */
     public function aroon(array $high, array $low, int $period = 14): array
@@ -279,6 +320,7 @@ class ExtensionBackend implements BackendInterface
     /**
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function aroonosc(array $high, array $low, int $period = 14): array
@@ -302,6 +344,7 @@ class ExtensionBackend implements BackendInterface
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
      * @param  array<int, float|int|null>  $close
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function cci(array $high, array $low, array $close, int $period = 14): array
@@ -311,6 +354,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function cmo(array $values, int $period = 14): array
@@ -322,6 +366,7 @@ class ExtensionBackend implements BackendInterface
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
      * @param  array<int, float|int|null>  $close
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function dx(array $high, array $low, array $close, int $period = 14): array
@@ -332,6 +377,7 @@ class ExtensionBackend implements BackendInterface
     /**
      * @param  array<int, float|int|null>  $open
      * @param  array<int, float|int|null>  $close
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function imi(array $open, array $close, int $period = 14): array
@@ -341,6 +387,9 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $fastPeriod    Number of periods for fast moving average.
+     * @param  positive-int                $slowPeriod    Number of periods for slow moving average.
+     * @param  positive-int                $signalPeriod  Number of periods for signal line.
      * @return array<string, array<int, float|int|null>>
      */
     public function macd(array $values, int $fastPeriod = 12, int $slowPeriod = 26, int $signalPeriod = 9): array
@@ -350,6 +399,12 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $fastPeriod     Number of periods for fast moving average.
+     * @param  int                         $fastMaType
+     * @param  positive-int                $slowPeriod     Number of periods for slow moving average.
+     * @param  int                         $slowMaType
+     * @param  positive-int                $signalPeriod   Number of periods for signal line.
+     * @param  int                         $signalMaType
      * @return array<string, array<int, float|int|null>>
      */
     public function macdext(array $values, int $fastPeriod = 12, int $fastMaType = 0, int $slowPeriod = 26, int $slowMaType = 0, int $signalPeriod = 9, int $signalMaType = 0): array
@@ -359,6 +414,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $signalPeriod  Number of periods for signal line.
      * @return array<string, array<int, float|int|null>>
      */
     public function macdfix(array $values, int $signalPeriod = 9): array
@@ -371,6 +427,7 @@ class ExtensionBackend implements BackendInterface
      * @param  array<int, float|int|null>  $low
      * @param  array<int, float|int|null>  $close
      * @param  array<int, float|int|null>  $volume
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function mfi(array $high, array $low, array $close, array $volume, int $period = 14): array
@@ -382,6 +439,7 @@ class ExtensionBackend implements BackendInterface
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
      * @param  array<int, float|int|null>  $close
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function minus_di(array $high, array $low, array $close, int $period = 14): array
@@ -392,6 +450,7 @@ class ExtensionBackend implements BackendInterface
     /**
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function minus_dm(array $high, array $low, int $period = 14): array
@@ -401,6 +460,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function mom(array $values, int $period = 10): array
@@ -412,6 +472,7 @@ class ExtensionBackend implements BackendInterface
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
      * @param  array<int, float|int|null>  $close
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function plus_di(array $high, array $low, array $close, int $period = 14): array
@@ -422,6 +483,7 @@ class ExtensionBackend implements BackendInterface
     /**
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function plus_dm(array $high, array $low, int $period = 14): array
@@ -431,6 +493,9 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $fastPeriod  Number of periods for fast moving average.
+     * @param  positive-int                $slowPeriod  Number of periods for slow moving average.
+     * @param  int                         $maType
      * @return array<int, float|int|null>
      */
     public function ppo(array $values, int $fastPeriod = 12, int $slowPeriod = 26, int $maType = 0): array
@@ -440,6 +505,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function roc(array $values, int $period = 10): array
@@ -449,6 +515,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function rocp(array $values, int $period = 10): array
@@ -458,6 +525,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function rocr(array $values, int $period = 10): array
@@ -467,6 +535,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function rocr100(array $values, int $period = 10): array
@@ -476,6 +545,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function rsi(array $values, int $period = 14): array
@@ -487,6 +557,11 @@ class ExtensionBackend implements BackendInterface
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
      * @param  array<int, float|int|null>  $close
+     * @param  positive-int                $fastKPeriod  Number of periods for fast %K line.
+     * @param  positive-int                $slowKPeriod  Number of periods for slow %K line.
+     * @param  int                         $slowKMaType
+     * @param  positive-int                $slowDPeriod  Number of periods for slow %D line.
+     * @param  int                         $slowDMaType
      * @return array<string, array<int, float|int|null>>
      */
     public function stoch(array $high, array $low, array $close, int $fastKPeriod = 5, int $slowKPeriod = 3, int $slowKMaType = 0, int $slowDPeriod = 3, int $slowDMaType = 0): array
@@ -498,6 +573,9 @@ class ExtensionBackend implements BackendInterface
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
      * @param  array<int, float|int|null>  $close
+     * @param  positive-int                $fastKPeriod  Number of periods for fast %K line.
+     * @param  positive-int                $fastDPeriod  Number of periods for fast %D line.
+     * @param  int                         $fastDMaType
      * @return array<string, array<int, float|int|null>>
      */
     public function stochf(array $high, array $low, array $close, int $fastKPeriod = 5, int $fastDPeriod = 3, int $fastDMaType = 0): array
@@ -507,6 +585,10 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period       Number of periods.
+     * @param  positive-int                $fastKPeriod  Number of periods for fast %K line.
+     * @param  positive-int                $fastDPeriod  Number of periods for fast %D line.
+     * @param  int                         $fastDMaType
      * @return array<string, array<int, float|int|null>>
      */
     public function stochrsi(array $values, int $period = 14, int $fastKPeriod = 5, int $fastDPeriod = 3, int $fastDMaType = 0): array
@@ -516,6 +598,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function trix(array $values, int $period = 30): array
@@ -527,6 +610,9 @@ class ExtensionBackend implements BackendInterface
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
      * @param  array<int, float|int|null>  $close
+     * @param  positive-int                $period1  Number of periods for first time frame.
+     * @param  positive-int                $period2  Number of periods for second time frame.
+     * @param  positive-int                $period3  Number of periods for third time frame.
      * @return array<int, float|int|null>
      */
     public function ultosc(array $high, array $low, array $close, int $period1 = 7, int $period2 = 14, int $period3 = 28): array
@@ -538,6 +624,7 @@ class ExtensionBackend implements BackendInterface
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
      * @param  array<int, float|int|null>  $close
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function willr(array $high, array $low, array $close, int $period = 14): array
@@ -607,6 +694,8 @@ class ExtensionBackend implements BackendInterface
      * @param  array<int, float|int|null>  $low
      * @param  array<int, float|int|null>  $close
      * @param  array<int, float|int|null>  $volume
+     * @param  positive-int                $fastPeriod  Number of periods for fast moving average.
+     * @param  positive-int                $slowPeriod  Number of periods for slow moving average.
      * @return array<int, float|int|null>
      */
     public function adosc(array $high, array $low, array $close, array $volume, int $fastPeriod = 3, int $slowPeriod = 10): array
@@ -713,6 +802,7 @@ class ExtensionBackend implements BackendInterface
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
      * @param  array<int, float|int|null>  $close
+     * @param  float                       $penetration
      * @return array<int, float|int|null>
      */
     public function cdlabandonedbaby(array $open, array $high, array $low, array $close, float $penetration = 0.0): array
@@ -797,6 +887,7 @@ class ExtensionBackend implements BackendInterface
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
      * @param  array<int, float|int|null>  $close
+     * @param  float                       $penetration
      * @return array<int, float|int|null>
      */
     public function cdldarkcloudcover(array $open, array $high, array $low, array $close, float $penetration = 0.0): array
@@ -857,6 +948,7 @@ class ExtensionBackend implements BackendInterface
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
      * @param  array<int, float|int|null>  $close
+     * @param  float                       $penetration
      * @return array<int, float|int|null>
      */
     public function cdleveningdojistar(array $open, array $high, array $low, array $close, float $penetration = 0.0): array
@@ -869,6 +961,7 @@ class ExtensionBackend implements BackendInterface
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
      * @param  array<int, float|int|null>  $close
+     * @param  float                       $penetration
      * @return array<int, float|int|null>
      */
     public function cdleveningstar(array $open, array $high, array $low, array $close, float $penetration = 0.0): array
@@ -1121,6 +1214,7 @@ class ExtensionBackend implements BackendInterface
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
      * @param  array<int, float|int|null>  $close
+     * @param  float                       $penetration
      * @return array<int, float|int|null>
      */
     public function cdlmathold(array $open, array $high, array $low, array $close, float $penetration = 0.0): array
@@ -1133,6 +1227,7 @@ class ExtensionBackend implements BackendInterface
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
      * @param  array<int, float|int|null>  $close
+     * @param  float                       $penetration
      * @return array<int, float|int|null>
      */
     public function cdlmorningdojistar(array $open, array $high, array $low, array $close, float $penetration = 0.0): array
@@ -1145,6 +1240,7 @@ class ExtensionBackend implements BackendInterface
      * @param  array<int, float|int|null>  $high
      * @param  array<int, float|int|null>  $low
      * @param  array<int, float|int|null>  $close
+     * @param  float                       $penetration
      * @return array<int, float|int|null>
      */
     public function cdlmorningstar(array $open, array $high, array $low, array $close, float $penetration = 0.0): array
@@ -1359,6 +1455,7 @@ class ExtensionBackend implements BackendInterface
     /**
      * @param  array<int, float|int|null>  $valuesA
      * @param  array<int, float|int|null>  $valuesB
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function beta(array $valuesA, array $valuesB, int $period = 5): array
@@ -1369,6 +1466,7 @@ class ExtensionBackend implements BackendInterface
     /**
      * @param  array<int, float|int|null>  $valuesA
      * @param  array<int, float|int|null>  $valuesB
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function correl(array $valuesA, array $valuesB, int $period = 30): array
@@ -1378,6 +1476,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function linearreg(array $values, int $period = 14): array
@@ -1387,6 +1486,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function linearreg_angle(array $values, int $period = 14): array
@@ -1396,6 +1496,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function linearreg_intercept(array $values, int $period = 14): array
@@ -1405,6 +1506,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function linearreg_slope(array $values, int $period = 14): array
@@ -1414,6 +1516,8 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
+     * @param  float                       $nbDev
      * @return array<int, float|int|null>
      */
     public function stddev(array $values, int $period = 5, float $nbDev = 1.0): array
@@ -1423,6 +1527,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function tsf(array $values, int $period = 14): array
@@ -1432,6 +1537,8 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
+     * @param  float                       $nbDev
      * @return array<int, float|int|null>
      */
     public function var(array $values, int $period = 5, float $nbDev = 1.0): array
@@ -1453,6 +1560,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function avgdev(array $values, int $period = 14): array
@@ -1669,6 +1777,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, float|int|null>
      */
     public function sum(array $values, int $period = 30): array
@@ -1678,6 +1787,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<string, array<int, float|int|null>>
      */
     public function max(array $values, int $period = 30): array
@@ -1687,6 +1797,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<string, array<int, float|int|null>>
      */
     public function min(array $values, int $period = 30): array
@@ -1696,6 +1807,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, int|null>
      */
     public function maxindex(array $values, int $period = 30): array
@@ -1705,6 +1817,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<int, int|null>
      */
     public function minindex(array $values, int $period = 30): array
@@ -1714,6 +1827,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<string, array<int, float|int|null>>
      */
     public function minmax(array $values, int $period = 30): array
@@ -1723,6 +1837,7 @@ class ExtensionBackend implements BackendInterface
 
     /**
      * @param  array<int, float|int|null>  $values
+     * @param  positive-int                $period  Number of periods.
      * @return array<string, array<int, int|null>>
      */
     public function minmaxindex(array $values, int $period = 30): array
