@@ -8,6 +8,11 @@ use RobertGDev\TaLibHybrid\Enum\ReturnCode;
 
 class StatisticFunctions extends Core
 {
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param array<int, float> $outReal
+     * @return int
+     */
     public static function avgdev(int $startIdx, int $endIdx, array $inReal, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -53,6 +58,12 @@ class StatisticFunctions extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal0
+     * @param array<int, float|int|null> $inReal1
+     * @param array<int, float> $outReal
+     * @return int
+     */
     public static function beta(int $startIdx, int $endIdx, array $inReal0, array $inReal1, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -150,6 +161,12 @@ class StatisticFunctions extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal0
+     * @param array<int, float|int|null> $inReal1
+     * @param array<int, float> $outReal
+     * @return int
+     */
     public static function correl(int $startIdx, int $endIdx, array $inReal0, array $inReal1, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -218,6 +235,11 @@ class StatisticFunctions extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param array<int, float> $outReal
+     * @return int
+     */
     public static function linearReg(int $startIdx, int $endIdx, array $inReal, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -261,6 +283,11 @@ class StatisticFunctions extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param array<int, float> $outReal
+     * @return int
+     */
     public static function linearRegAngle(int $startIdx, int $endIdx, array $inReal, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -303,6 +330,11 @@ class StatisticFunctions extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param array<int, float> $outReal
+     * @return int
+     */
     public static function linearRegIntercept(int $startIdx, int $endIdx, array $inReal, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -345,6 +377,11 @@ class StatisticFunctions extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param array<int, float> $outReal
+     * @return int
+     */
     public static function linearRegSlope(int $startIdx, int $endIdx, array $inReal, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -386,6 +423,11 @@ class StatisticFunctions extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param  array<int, float|int|null>  $inReal
+     * @param  array<int, float|int|null>  $outReal
+     * @return int
+     */
     public static function stdDev(int $startIdx, int $endIdx, array $inReal, int $optInTimePeriod, float $optInNbDev, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -415,17 +457,22 @@ class StatisticFunctions extends Core
         }
         if ($optInNbDev != 1.0) {
             for ($i = 0; $i < $outNBElement; $i++) {
-                $outReal[$i] = sqrt($outReal[$i]) * $optInNbDev;
+                $outReal[$i] = sqrt((float) $outReal[$i]) * $optInNbDev;
             }
         } else {
             for ($i = 0; $i < $outNBElement; $i++) {
-                $outReal[$i] = sqrt($outReal[$i]);
+                $outReal[$i] = sqrt((float) $outReal[$i]);
             }
         }
 
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param array<int, float> $outReal
+     * @return int
+     */
     public static function tsf(int $startIdx, int $endIdx, array $inReal, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -469,6 +516,11 @@ class StatisticFunctions extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param  array<int, float|int|null>  $inReal
+     * @param  array<int, float|int|null>  $outReal
+     * @return int
+     */
     public static function variance(int $startIdx, int $endIdx, array $inReal, int $optInTimePeriod, float $optInNbDev, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {

@@ -9,6 +9,13 @@ use RobertGDev\TaLibHybrid\Enum\ReturnCode;
 
 class VolatilityIndicators extends Core
 {
+    /**
+     * @param array<int, float|int|null> $inHigh
+     * @param array<int, float|int|null> $inLow
+     * @param array<int, float|int|null> $inClose
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function atr(int $startIdx, int $endIdx, array $inHigh, array $inLow, array $inClose, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -93,6 +100,13 @@ class VolatilityIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inHigh
+     * @param array<int, float|int|null> $inLow
+     * @param array<int, float|int|null> $inClose
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function natr(int $startIdx, int $endIdx, array $inHigh, array $inLow, array $inClose, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -188,6 +202,13 @@ class VolatilityIndicators extends Core
         return $retCode;
     }
 
+    /**
+     * @param array<int, float|int|null> $inHigh
+     * @param array<int, float|int|null> $inLow
+     * @param array<int, float|int|null> $inClose
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function trueRange(int $startIdx, int $endIdx, array $inHigh, array $inLow, array $inClose, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {

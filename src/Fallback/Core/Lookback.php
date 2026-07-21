@@ -61,11 +61,8 @@ class Lookback extends Core
         } elseif (($optInTimePeriod < 2) || ($optInTimePeriod > 100000)) {
             return -1;
         }
-        if ($optInTimePeriod > 1) {
-            return $optInTimePeriod + self::adxLookback($optInTimePeriod) - 1;
-        }
 
-        return 3;
+        return $optInTimePeriod + self::adxLookback($optInTimePeriod) - 1;
     }
 
     public static function apoLookback(int $optInFastPeriod, int $optInSlowPeriod, int $optInMAType): int

@@ -31,6 +31,10 @@ class FallbackBackend implements BackendInterface
         }
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     private function singleInput(array $values, string $class, string $method): array
     {
         $this->ensureInitialized();
@@ -45,6 +49,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  ...$arrays
+     * @return int
+     */
     private function validateArrays(array ...$arrays): int
     {
         $count = count($arrays[0]);
@@ -60,11 +68,19 @@ class FallbackBackend implements BackendInterface
         return $count - 1;
     }
 
+    /**
+     * @param  array<int, float|int|null>  $array
+     * @return array<int, float|int|null>
+     */
     private static function reindex(array $array): array
     {
         return array_values($array);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $sequentialOutput
+     * @return array<int, float|int|null>
+     */
     private static function padWithNulls(array $sequentialOutput, int $outBegIdx, int $inputCount): array
     {
         $result = array_fill(0, $inputCount, null);
@@ -105,81 +121,146 @@ class FallbackBackend implements BackendInterface
         return Core::getUnstablePeriod($functionId);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function acos(array $values): array
     {
         return $this->singleInput($values, MathTransform::class, 'acos');
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function asin(array $values): array
     {
         return $this->singleInput($values, MathTransform::class, 'asin');
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function atan(array $values): array
     {
         return $this->singleInput($values, MathTransform::class, 'atan');
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function ceil(array $values): array
     {
         return $this->singleInput($values, MathTransform::class, 'ceil');
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function cos(array $values): array
     {
         return $this->singleInput($values, MathTransform::class, 'cos');
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function cosh(array $values): array
     {
         return $this->singleInput($values, MathTransform::class, 'cosh');
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function exp(array $values): array
     {
         return $this->singleInput($values, MathTransform::class, 'exp');
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function floor(array $values): array
     {
         return $this->singleInput($values, MathTransform::class, 'floor');
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function ln(array $values): array
     {
         return $this->singleInput($values, MathTransform::class, 'ln');
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function log10(array $values): array
     {
         return $this->singleInput($values, MathTransform::class, 'log10');
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function sin(array $values): array
     {
         return $this->singleInput($values, MathTransform::class, 'sin');
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function sinh(array $values): array
     {
         return $this->singleInput($values, MathTransform::class, 'sinh');
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function sqrt(array $values): array
     {
         return $this->singleInput($values, MathTransform::class, 'sqrt');
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function tan(array $values): array
     {
         return $this->singleInput($values, MathTransform::class, 'tan');
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function tanh(array $values): array
     {
         return $this->singleInput($values, MathTransform::class, 'tanh');
     }
 
+    /**
+     * @param  array<int, float|int|null>  $valuesA
+     * @param  array<int, float|int|null>  $valuesB
+     * @return array<int, float|int|null>
+     */
     public function add(array $valuesA, array $valuesB): array
     {
         $this->ensureInitialized();
@@ -194,6 +275,11 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $valuesA
+     * @param  array<int, float|int|null>  $valuesB
+     * @return array<int, float|int|null>
+     */
     public function sub(array $valuesA, array $valuesB): array
     {
         $this->ensureInitialized();
@@ -208,6 +294,11 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $valuesA
+     * @param  array<int, float|int|null>  $valuesB
+     * @return array<int, float|int|null>
+     */
     public function mult(array $valuesA, array $valuesB): array
     {
         $this->ensureInitialized();
@@ -222,6 +313,11 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $valuesA
+     * @param  array<int, float|int|null>  $valuesB
+     * @return array<int, float|int|null>
+     */
     public function div(array $valuesA, array $valuesB): array
     {
         $this->ensureInitialized();
@@ -236,6 +332,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function sum(array $values, int $period = 30): array
     {
         $this->ensureInitialized();
@@ -249,6 +349,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<string, array<int, float|int|null>>
+     */
     public function max(array $values, int $period = 30): array
     {
         $this->ensureInitialized();
@@ -259,9 +363,13 @@ class FallbackBackend implements BackendInterface
         $outNBElement = 0;
         $this->checkReturnCode(MathOperators::max(0, $endIdx, $values, $period, $outBegIdx, $outNBElement, $outReal));
 
-        return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
+        return ['max' => self::padWithNulls($outReal, $outBegIdx, $endIdx + 1)];
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<string, array<int, float|int|null>>
+     */
     public function min(array $values, int $period = 30): array
     {
         $this->ensureInitialized();
@@ -272,9 +380,13 @@ class FallbackBackend implements BackendInterface
         $outNBElement = 0;
         $this->checkReturnCode(MathOperators::min(0, $endIdx, $values, $period, $outBegIdx, $outNBElement, $outReal));
 
-        return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
+        return ['min' => self::padWithNulls($outReal, $outBegIdx, $endIdx + 1)];
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, int|null>
+     */
     public function maxindex(array $values, int $period = 30): array
     {
         $this->ensureInitialized();
@@ -285,9 +397,15 @@ class FallbackBackend implements BackendInterface
         $outNBElement = 0;
         $this->checkReturnCode(MathOperators::maxIndex(0, $endIdx, $values, $period, $outBegIdx, $outNBElement, $outReal));
 
-        return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
+        $result = self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
+
+        return array_map(fn ($v) => $v === null ? null : (int) $v, $result);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, int|null>
+     */
     public function minindex(array $values, int $period = 30): array
     {
         $this->ensureInitialized();
@@ -298,9 +416,15 @@ class FallbackBackend implements BackendInterface
         $outNBElement = 0;
         $this->checkReturnCode(MathOperators::minIndex(0, $endIdx, $values, $period, $outBegIdx, $outNBElement, $outReal));
 
-        return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
+        $result = self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
+
+        return array_map(fn ($v) => $v === null ? null : (int) $v, $result);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<string, array<int, float|int|null>>
+     */
     public function minmax(array $values, int $period = 30): array
     {
         $this->ensureInitialized();
@@ -315,6 +439,10 @@ class FallbackBackend implements BackendInterface
         return ['min' => self::padWithNulls($outMin, $outBegIdx, $endIdx + 1), 'max' => self::padWithNulls($outMax, $outBegIdx, $endIdx + 1)];
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<string, array<int, int|null>>
+     */
     public function minmaxindex(array $values, int $period = 30): array
     {
         $this->ensureInitialized();
@@ -326,9 +454,16 @@ class FallbackBackend implements BackendInterface
         $outNBElement = 0;
         $this->checkReturnCode(MathOperators::minMaxIndex(0, $endIdx, $values, $period, $outBegIdx, $outNBElement, $outMinIdx, $outMaxIdx));
 
-        return ['min' => self::padWithNulls($outMinIdx, $outBegIdx, $endIdx + 1), 'max' => self::padWithNulls($outMaxIdx, $outBegIdx, $endIdx + 1)];
+        $minResult = array_map(fn ($v) => $v === null ? null : (int) $v, self::padWithNulls($outMinIdx, $outBegIdx, $endIdx + 1));
+        $maxResult = array_map(fn ($v) => $v === null ? null : (int) $v, self::padWithNulls($outMaxIdx, $outBegIdx, $endIdx + 1));
+
+        return ['min' => $minResult, 'max' => $maxResult];
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function sma(array $values, int $period): array
     {
         $this->ensureInitialized();
@@ -342,6 +477,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function ema(array $values, int $period): array
     {
         $this->ensureInitialized();
@@ -355,6 +494,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function wma(array $values, int $period): array
     {
         $this->ensureInitialized();
@@ -368,6 +511,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function dema(array $values, int $period): array
     {
         $this->ensureInitialized();
@@ -381,6 +528,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function tema(array $values, int $period): array
     {
         $this->ensureInitialized();
@@ -394,6 +545,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function trima(array $values, int $period): array
     {
         $this->ensureInitialized();
@@ -407,6 +562,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function kama(array $values, int $period): array
     {
         $this->ensureInitialized();
@@ -420,6 +579,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function t3(array $values, int $period, float $vFactor = 0.7): array
     {
         $this->ensureInitialized();
@@ -433,6 +596,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function ma(array $values, int $period = 30, int $maType = 0): array
     {
         $this->ensureInitialized();
@@ -446,6 +613,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<string, array<int, float|int|null>>
+     */
     public function mama(array $values, float $fastLimit = 0.5, float $slowLimit = 0.05): array
     {
         $this->ensureInitialized();
@@ -460,6 +631,11 @@ class FallbackBackend implements BackendInterface
         return ['mama' => self::padWithNulls($outMAMA, $outBegIdx, $endIdx + 1), 'fama' => self::padWithNulls($outFAMA, $outBegIdx, $endIdx + 1)];
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @param  array<int, int>  $periods
+     * @return array<int, float|int|null>
+     */
     public function mavp(array $values, array $periods, int $minPeriod = 2, int $maxPeriod = 30, int $maType = 0): array
     {
         $this->ensureInitialized();
@@ -474,6 +650,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function midpoint(array $values, int $period = 14): array
     {
         $this->ensureInitialized();
@@ -487,6 +667,11 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @return array<int, float|int|null>
+     */
     public function midprice(array $high, array $low, int $period = 14): array
     {
         $this->ensureInitialized();
@@ -501,6 +686,11 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @return array<int, float|int|null>
+     */
     public function sar(array $high, array $low, float $acceleration = 0.02, float $maximum = 0.20): array
     {
         $this->ensureInitialized();
@@ -515,6 +705,11 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @return array<int, float|int|null>
+     */
     public function sarext(array $high, array $low, float $startValue = 0.0, float $offsetOnReverse = 0.0, float $accelerationInitLong = 0.02, float $accelerationLong = 0.02, float $accelerationMaxLong = 0.20, float $accelerationInitShort = 0.02, float $accelerationShort = 0.02, float $accelerationMaxShort = 0.20): array
     {
         $this->ensureInitialized();
@@ -529,6 +724,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function ht_trendline(array $values): array
     {
         $this->ensureInitialized();
@@ -542,6 +741,12 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<string, array<int, float|int|null>>
+     */
     public function accbands(array $high, array $low, array $close, int $period = 20): array
     {
         $this->ensureInitialized();
@@ -560,6 +765,10 @@ class FallbackBackend implements BackendInterface
         return ['upper' => self::padWithNulls($outUpper, $outBegIdx, $n), 'middle' => self::padWithNulls($outMiddle, $outBegIdx, $n), 'lower' => self::padWithNulls($outLower, $outBegIdx, $n)];
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<string, array<int, float|int|null>>
+     */
     public function bbands(array $values, int $period = 5, float $nbDevUp = 2.0, float $nbDevDn = 2.0, int $maType = 0): array
     {
         $this->ensureInitialized();
@@ -576,6 +785,12 @@ class FallbackBackend implements BackendInterface
         return ['upper' => self::padWithNulls($outUpper, $outBegIdx, $n), 'middle' => self::padWithNulls($outMiddle, $outBegIdx, $n), 'lower' => self::padWithNulls($outLower, $outBegIdx, $n)];
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function atr(array $high, array $low, array $close, int $period = 14): array
     {
         $this->ensureInitialized();
@@ -591,6 +806,12 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function natr(array $high, array $low, array $close, int $period = 14): array
     {
         $this->ensureInitialized();
@@ -606,6 +827,12 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function trange(array $high, array $low, array $close): array
     {
         $this->ensureInitialized();
@@ -621,6 +848,12 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function adx(array $high, array $low, array $close, int $period = 14): array
     {
         $this->ensureInitialized();
@@ -636,6 +869,12 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function adxr(array $high, array $low, array $close, int $period = 14): array
     {
         $this->ensureInitialized();
@@ -651,6 +890,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function apo(array $values, int $fastPeriod = 12, int $slowPeriod = 26, int $maType = 0): array
     {
         $this->ensureInitialized();
@@ -664,6 +907,11 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @return array<string, array<int, float|int|null>>
+     */
     public function aroon(array $high, array $low, int $period = 14): array
     {
         $this->ensureInitialized();
@@ -680,6 +928,11 @@ class FallbackBackend implements BackendInterface
         return ['down' => self::padWithNulls($outDown, $outBegIdx, $n), 'up' => self::padWithNulls($outUp, $outBegIdx, $n)];
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @return array<int, float|int|null>
+     */
     public function aroonosc(array $high, array $low, int $period = 14): array
     {
         $this->ensureInitialized();
@@ -694,6 +947,13 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function bop(array $open, array $high, array $low, array $close): array
     {
         $this->ensureInitialized();
@@ -710,6 +970,12 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cci(array $high, array $low, array $close, int $period = 14): array
     {
         $this->ensureInitialized();
@@ -725,6 +991,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function cmo(array $values, int $period = 14): array
     {
         $this->ensureInitialized();
@@ -738,6 +1008,12 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function dx(array $high, array $low, array $close, int $period = 14): array
     {
         $this->ensureInitialized();
@@ -753,6 +1029,11 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function imi(array $open, array $close, int $period = 14): array
     {
         $this->ensureInitialized();
@@ -767,6 +1048,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<string, array<int, float|int|null>>
+     */
     public function macd(array $values, int $fastPeriod = 12, int $slowPeriod = 26, int $signalPeriod = 9): array
     {
         $this->ensureInitialized();
@@ -783,6 +1068,10 @@ class FallbackBackend implements BackendInterface
         return ['macd' => self::padWithNulls($outMACD, $outBegIdx, $n), 'signal' => self::padWithNulls($outSignal, $outBegIdx, $n), 'hist' => self::padWithNulls($outHist, $outBegIdx, $n)];
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<string, array<int, float|int|null>>
+     */
     public function macdext(array $values, int $fastPeriod = 12, int $fastMaType = 0, int $slowPeriod = 26, int $slowMaType = 0, int $signalPeriod = 9, int $signalMaType = 0): array
     {
         $this->ensureInitialized();
@@ -799,6 +1088,10 @@ class FallbackBackend implements BackendInterface
         return ['macd' => self::padWithNulls($outMACD, $outBegIdx, $n), 'signal' => self::padWithNulls($outSignal, $outBegIdx, $n), 'hist' => self::padWithNulls($outHist, $outBegIdx, $n)];
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<string, array<int, float|int|null>>
+     */
     public function macdfix(array $values, int $signalPeriod = 9): array
     {
         $this->ensureInitialized();
@@ -815,6 +1108,13 @@ class FallbackBackend implements BackendInterface
         return ['macd' => self::padWithNulls($outMACD, $outBegIdx, $n), 'signal' => self::padWithNulls($outSignal, $outBegIdx, $n), 'hist' => self::padWithNulls($outHist, $outBegIdx, $n)];
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @param  array<int, float|int|null>  $volume
+     * @return array<int, float|int|null>
+     */
     public function mfi(array $high, array $low, array $close, array $volume, int $period = 14): array
     {
         $this->ensureInitialized();
@@ -831,6 +1131,12 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function minus_di(array $high, array $low, array $close, int $period = 14): array
     {
         $this->ensureInitialized();
@@ -846,6 +1152,11 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @return array<int, float|int|null>
+     */
     public function minus_dm(array $high, array $low, int $period = 14): array
     {
         $this->ensureInitialized();
@@ -860,6 +1171,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function mom(array $values, int $period = 10): array
     {
         $this->ensureInitialized();
@@ -873,6 +1188,12 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function plus_di(array $high, array $low, array $close, int $period = 14): array
     {
         $this->ensureInitialized();
@@ -888,6 +1209,11 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @return array<int, float|int|null>
+     */
     public function plus_dm(array $high, array $low, int $period = 14): array
     {
         $this->ensureInitialized();
@@ -902,6 +1228,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function ppo(array $values, int $fastPeriod = 12, int $slowPeriod = 26, int $maType = 0): array
     {
         $this->ensureInitialized();
@@ -915,6 +1245,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function roc(array $values, int $period = 10): array
     {
         $this->ensureInitialized();
@@ -928,6 +1262,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function rocp(array $values, int $period = 10): array
     {
         $this->ensureInitialized();
@@ -941,6 +1279,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function rocr(array $values, int $period = 10): array
     {
         $this->ensureInitialized();
@@ -954,6 +1296,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function rocr100(array $values, int $period = 10): array
     {
         $this->ensureInitialized();
@@ -967,6 +1313,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function rsi(array $values, int $period = 14): array
     {
         $this->ensureInitialized();
@@ -980,6 +1330,12 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<string, array<int, float|int|null>>
+     */
     public function stoch(array $high, array $low, array $close, int $fastKPeriod = 5, int $slowKPeriod = 3, int $slowKMaType = 0, int $slowDPeriod = 3, int $slowDMaType = 0): array
     {
         $this->ensureInitialized();
@@ -997,6 +1353,12 @@ class FallbackBackend implements BackendInterface
         return ['slowk' => self::padWithNulls($outSlowK, $outBegIdx, $n), 'slowd' => self::padWithNulls($outSlowD, $outBegIdx, $n)];
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<string, array<int, float|int|null>>
+     */
     public function stochf(array $high, array $low, array $close, int $fastKPeriod = 5, int $fastDPeriod = 3, int $fastDMaType = 0): array
     {
         $this->ensureInitialized();
@@ -1014,6 +1376,10 @@ class FallbackBackend implements BackendInterface
         return ['fastk' => self::padWithNulls($outFastK, $outBegIdx, $n), 'fastd' => self::padWithNulls($outFastD, $outBegIdx, $n)];
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<string, array<int, float|int|null>>
+     */
     public function stochrsi(array $values, int $period = 14, int $fastKPeriod = 5, int $fastDPeriod = 3, int $fastDMaType = 0): array
     {
         $this->ensureInitialized();
@@ -1029,6 +1395,10 @@ class FallbackBackend implements BackendInterface
         return ['fastk' => self::padWithNulls($outFastK, $outBegIdx, $n), 'fastd' => self::padWithNulls($outFastD, $outBegIdx, $n)];
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function trix(array $values, int $period = 30): array
     {
         $this->ensureInitialized();
@@ -1042,6 +1412,12 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function ultosc(array $high, array $low, array $close, int $period1 = 7, int $period2 = 14, int $period3 = 28): array
     {
         $this->ensureInitialized();
@@ -1057,6 +1433,12 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function willr(array $high, array $low, array $close, int $period = 14): array
     {
         $this->ensureInitialized();
@@ -1072,6 +1454,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function ht_dcperiod(array $values): array
     {
         $this->ensureInitialized();
@@ -1085,6 +1471,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function ht_dcphase(array $values): array
     {
         $this->ensureInitialized();
@@ -1098,6 +1488,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<string, array<int, float|int|null>>
+     */
     public function ht_phasor(array $values): array
     {
         $this->ensureInitialized();
@@ -1113,6 +1507,10 @@ class FallbackBackend implements BackendInterface
         return ['inphase' => self::padWithNulls($outInPhase, $outBegIdx, $n), 'quadrature' => self::padWithNulls($outQuadrature, $outBegIdx, $n)];
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<string, array<int, float|int|null>>
+     */
     public function ht_sine(array $values): array
     {
         $this->ensureInitialized();
@@ -1128,6 +1526,10 @@ class FallbackBackend implements BackendInterface
         return ['sine' => self::padWithNulls($outSine, $outBegIdx, $n), 'leadsine' => self::padWithNulls($outLeadSine, $outBegIdx, $n)];
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function ht_trendmode(array $values): array
     {
         $this->ensureInitialized();
@@ -1141,6 +1543,13 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @param  array<int, float|int|null>  $volume
+     * @return array<int, float|int|null>
+     */
     public function ad(array $high, array $low, array $close, array $volume): array
     {
         $this->ensureInitialized();
@@ -1157,6 +1566,13 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @param  array<int, float|int|null>  $volume
+     * @return array<int, float|int|null>
+     */
     public function adosc(array $high, array $low, array $close, array $volume, int $fastPeriod = 3, int $slowPeriod = 10): array
     {
         $this->ensureInitialized();
@@ -1173,6 +1589,11 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @param  array<int, float|int|null>  $volume
+     * @return array<int, float|int|null>
+     */
     public function obv(array $values, array $volume): array
     {
         $this->ensureInitialized();
@@ -1187,6 +1608,11 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $valuesA
+     * @param  array<int, float|int|null>  $valuesB
+     * @return array<int, float|int|null>
+     */
     public function beta(array $valuesA, array $valuesB, int $period = 5): array
     {
         $this->ensureInitialized();
@@ -1201,6 +1627,11 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $valuesA
+     * @param  array<int, float|int|null>  $valuesB
+     * @return array<int, float|int|null>
+     */
     public function correl(array $valuesA, array $valuesB, int $period = 30): array
     {
         $this->ensureInitialized();
@@ -1215,6 +1646,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function linearreg(array $values, int $period = 14): array
     {
         $this->ensureInitialized();
@@ -1228,6 +1663,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function linearreg_angle(array $values, int $period = 14): array
     {
         $this->ensureInitialized();
@@ -1241,6 +1680,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function linearreg_intercept(array $values, int $period = 14): array
     {
         $this->ensureInitialized();
@@ -1254,6 +1697,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function linearreg_slope(array $values, int $period = 14): array
     {
         $this->ensureInitialized();
@@ -1267,6 +1714,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function stddev(array $values, int $period = 5, float $nbDev = 1.0): array
     {
         $this->ensureInitialized();
@@ -1280,6 +1731,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function tsf(array $values, int $period = 14): array
     {
         $this->ensureInitialized();
@@ -1293,6 +1748,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function var(array $values, int $period = 5, float $nbDev = 1.0): array
     {
         $this->ensureInitialized();
@@ -1306,6 +1765,13 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function avgprice(array $open, array $high, array $low, array $close): array
     {
         $this->ensureInitialized();
@@ -1322,6 +1788,10 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $values
+     * @return array<int, float|int|null>
+     */
     public function avgdev(array $values, int $period = 14): array
     {
         $this->ensureInitialized();
@@ -1335,6 +1805,11 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @return array<int, float|int|null>
+     */
     public function medprice(array $high, array $low): array
     {
         $this->ensureInitialized();
@@ -1349,6 +1824,12 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function typprice(array $high, array $low, array $close): array
     {
         $this->ensureInitialized();
@@ -1364,6 +1845,12 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function wclprice(array $high, array $low, array $close): array
     {
         $this->ensureInitialized();
@@ -1379,6 +1866,13 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outReal, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     private function cdl(string $method, array $open, array $high, array $low, array $close, float $penetration = 0.0): array
     {
         $this->ensureInitialized();
@@ -1404,306 +1898,733 @@ class FallbackBackend implements BackendInterface
         return self::padWithNulls($outInteger, $outBegIdx, $endIdx + 1);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdl2crows(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdl2Crows', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdl3blackcrows(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdl3BlackCrows', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdl3inside(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdl3Inside', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdl3linestrike(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdl3LineStrike', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdl3outside(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdl3Outside', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdl3starsinsouth(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdl3StarsInSouth', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdl3whitesoldiers(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdl3WhiteSoldiers', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlabandonedbaby(array $open, array $high, array $low, array $close, float $penetration = 0.0): array
     {
         return $this->cdl('cdlAbandonedBaby', $open, $high, $low, $close, $penetration);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdladvanceblock(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlAdvanceBlock', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlbelthold(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlBeltHold', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlbreakaway(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlBreakaway', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlclosingmarubozu(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlClosingMarubozu', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlconcealbabyswall(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlConcealBabysWall', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlcounterattack(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlCounterAttack', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdldarkcloudcover(array $open, array $high, array $low, array $close, float $penetration = 0.0): array
     {
         return $this->cdl('cdlDarkCloudCover', $open, $high, $low, $close, $penetration);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdldoji(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlDoji', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdldojistar(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlDojiStar', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdldragonflydoji(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlDragonflyDoji', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlengulfing(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlEngulfing', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdleveningdojistar(array $open, array $high, array $low, array $close, float $penetration = 0.0): array
     {
         return $this->cdl('cdlEveningDojiStar', $open, $high, $low, $close, $penetration);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdleveningstar(array $open, array $high, array $low, array $close, float $penetration = 0.0): array
     {
         return $this->cdl('cdlEveningStar', $open, $high, $low, $close, $penetration);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlgapsidesidewhite(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlGapSideSideWhite', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlgravestonedoji(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlGravestoneDoji', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlhammer(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlHammer', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlhangingman(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlHangingMan', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlharami(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlHarami', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlharamicross(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlHaramiCross', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlhighwave(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlHighWave', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlhikkake(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlHikkake', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlhikkakemod(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlHikkakeMod', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlhomingpigeon(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlHomingPigeon', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlidentical3crows(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlIdentical3Crows', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlinneck(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlInNeck', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlinvertedhammer(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlInvertedHammer', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlkicking(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlKicking', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlkickingbylength(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlKickingByLength', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlladderbottom(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlLadderBottom', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdllongleggeddoji(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlLongLeggedDoji', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdllongline(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlLongLine', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlmarubozu(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlMarubozu', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlmatchinglow(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlMatchingLow', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlmathold(array $open, array $high, array $low, array $close, float $penetration = 0.0): array
     {
         return $this->cdl('cdlMatHold', $open, $high, $low, $close, $penetration);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlmorningdojistar(array $open, array $high, array $low, array $close, float $penetration = 0.0): array
     {
         return $this->cdl('cdlMorningDojiStar', $open, $high, $low, $close, $penetration);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlmorningstar(array $open, array $high, array $low, array $close, float $penetration = 0.0): array
     {
         return $this->cdl('cdlMorningStar', $open, $high, $low, $close, $penetration);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlonneck(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlOnNeck', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlpiercing(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlPiercing', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlrickshawman(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlRickshawMan', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlrisefall3methods(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlRiseFall3Methods', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlseparatinglines(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlSeparatingLines', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlshootingstar(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlShootingStar', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlshortline(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlShortLine', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlspinningtop(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlSpinningTop', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlstalledpattern(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlStalledPattern', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlsticksandwich(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlStickSandwich', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdltakuri(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlTakuri', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdltasukigap(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlTasukiGap', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlthrusting(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlThrusting', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdltristar(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlTristar', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlunique3river(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlUnique3River', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlupsidegap2crows(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlUpsideGap2Crows', $open, $high, $low, $close);
     }
 
+    /**
+     * @param  array<int, float|int|null>  $open
+     * @param  array<int, float|int|null>  $high
+     * @param  array<int, float|int|null>  $low
+     * @param  array<int, float|int|null>  $close
+     * @return array<int, float|int|null>
+     */
     public function cdlxsidegap3methods(array $open, array $high, array $low, array $close): array
     {
         return $this->cdl('cdlXSideGap3Methods', $open, $high, $low, $close);

@@ -9,6 +9,11 @@ use RobertGDev\TaLibHybrid\Enum\ReturnCode;
 
 class CycleIndicators extends Core
 {
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function htDcPeriod(int $startIdx, int $endIdx, array $inReal, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -167,6 +172,11 @@ class CycleIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function htDcPhase(int $startIdx, int $endIdx, array $inReal, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -467,6 +477,12 @@ class CycleIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outInPhase
+     * @param  array<int, float|int|null> $outQuadrature
+     * @return int
+     */
     public static function htPhasor(int $startIdx, int $endIdx, array $inReal, int &$outBegIdx, int &$outNBElement, array &$outInPhase, array &$outQuadrature): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -719,6 +735,12 @@ class CycleIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outSine
+     * @param  array<int, float|int|null> $outLeadSine
+     * @return int
+     */
     public static function htSine(int $startIdx, int $endIdx, array $inReal, int &$outBegIdx, int &$outNBElement, array &$outSine, array &$outLeadSine): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -1021,6 +1043,11 @@ class CycleIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outInteger
+     * @return int
+     */
     public static function htTrendMode(int $startIdx, int $endIdx, array $inReal, int &$outBegIdx, int &$outNBElement, array &$outInteger): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {

@@ -13,8 +13,10 @@ use RobertGDev\TaLibHybrid\Fallback\Classes\CandleSetting;
 
 class Core
 {
+    /** @var array<int, int> */
     protected static array $unstablePeriod;
 
+    /** @var array<int, CandleSetting> */
     protected static array $candleSettings;
 
     public static int $compatibility = Compatibility::Default->value;
@@ -57,6 +59,9 @@ class Core
         return static::$compatibility;
     }
 
+    /**
+     * @return array<int, float>
+     */
     protected static function double(int $size): array
     {
         return \array_pad([], $size, 0.0);
@@ -74,6 +79,10 @@ class Core
         return ReturnCode::Success->value;
     }
 
+    /** @param  array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @param  array<int, float|int|null> $tempBuffer
+     */
     protected static function TA_INT_PO(
         int $startIdx,
         int $endIdx,
@@ -127,6 +136,11 @@ class Core
         return $ReturnCode;
     }
 
+    /** @param  array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outMACD
+     * @param  array<int, float|int|null> $outMACDSignal
+     * @param  array<int, float|int|null> $outMACDHist
+     */
     protected static function TA_INT_MACD(
         int $startIdx,
         int $endIdx,
@@ -220,6 +234,9 @@ class Core
         return ReturnCode::Success->value;
     }
 
+    /** @param  array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outReal
+     */
     protected static function TA_INT_EMA(int $startIdx, int $endIdx, array $inReal, int $optInTimePeriod, float $optInK_1, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         $lookbackTotal = Lookback::emaLookback($optInTimePeriod);
@@ -259,6 +276,9 @@ class Core
         return ReturnCode::Success->value;
     }
 
+    /** @param  array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outReal
+     */
     protected static function TA_INT_SMA(int $startIdx, int $endIdx, array $inReal, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         $lookbackTotal = ($optInTimePeriod - 1);
@@ -292,6 +312,10 @@ class Core
         return ReturnCode::Success->value;
     }
 
+    /** @param  array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $inMovAvg
+     * @param  array<int, float|int|null> $output
+     */
     protected static function TA_INT_stddev_using_precalc_ma(array $inReal, array $inMovAvg, int $inMovAvgBegIdx, int $inMovAvgNbElement, int $timePeriod, array &$output): int
     {
         $startSum = 1 + $inMovAvgBegIdx - $timePeriod;
@@ -323,6 +347,9 @@ class Core
         return ReturnCode::Success->value;
     }
 
+    /** @param  array<int, float|int|null> $inReal
+     * @param  array<int, float|int|null> $outReal
+     */
     protected static function TA_INT_VAR(int $startIdx, int $endIdx, array $inReal, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         $nbInitialElementNeeded = ($optInTimePeriod - 1);

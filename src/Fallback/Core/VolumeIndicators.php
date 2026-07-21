@@ -9,6 +9,14 @@ use RobertGDev\TaLibHybrid\Enum\ReturnCode;
 
 class VolumeIndicators extends Core
 {
+    /**
+     * @param array<int, float|int|null> $inHigh
+     * @param array<int, float|int|null> $inLow
+     * @param array<int, float|int|null> $inClose
+     * @param array<int, float|int|null> $inVolume
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function ad(int $startIdx, int $endIdx, array $inHigh, array $inLow, array $inClose, array $inVolume, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -36,6 +44,14 @@ class VolumeIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inHigh
+     * @param array<int, float|int|null> $inLow
+     * @param array<int, float|int|null> $inClose
+     * @param array<int, float|int|null> $inVolume
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function adOsc(
         int $startIdx,
         int $endIdx,
@@ -131,6 +147,13 @@ class VolumeIndicators extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param array<int, float|int|null> $inHigh
+     * @param array<int, float|int|null> $inLow
+     * @param array<int, float|int|null> $inClose
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function atr(int $startIdx, int $endIdx, array $inHigh, array $inLow, array $inClose, int $optInTimePeriod, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -189,6 +212,12 @@ class VolumeIndicators extends Core
         return $retCode;
     }
 
+    /**
+     * @param array<int, float|int|null> $inReal
+     * @param array<int, float|int|null> $inVolume
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function obv(int $startIdx, int $endIdx, array $inReal, array &$inVolume, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -213,3 +242,4 @@ class VolumeIndicators extends Core
         return ReturnCode::Success->value;
     }
 }
+

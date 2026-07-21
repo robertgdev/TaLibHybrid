@@ -62,6 +62,11 @@ class MathTransform extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param  array<int, float|int> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function ceil(int $startIdx, int $endIdx, array $inReal, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -76,6 +81,11 @@ class MathTransform extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param  array<int, float|int> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function cos(int $startIdx, int $endIdx, array $inReal, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -90,6 +100,11 @@ class MathTransform extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param  array<int, float|int> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function cosh(int $startIdx, int $endIdx, array $inReal, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -104,6 +119,11 @@ class MathTransform extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param  array<int, float|int> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function exp(int $startIdx, int $endIdx, array $inReal, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -118,6 +138,11 @@ class MathTransform extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param  array<int, float|int> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function floor(int $startIdx, int $endIdx, array $inReal, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -132,6 +157,11 @@ class MathTransform extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param  array<int, float|int> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function ln(int $startIdx, int $endIdx, array $inReal, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -146,6 +176,11 @@ class MathTransform extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param  array<int, float|int> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function log10(int $startIdx, int $endIdx, array $inReal, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -160,6 +195,11 @@ class MathTransform extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param  array<int, float|int> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function sin(int $startIdx, int $endIdx, array $inReal, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -174,6 +214,11 @@ class MathTransform extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param  array<int, float|int> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function sinh(int $startIdx, int $endIdx, array $inReal, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -188,6 +233,11 @@ class MathTransform extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param  array<int, float|int> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function sqrt(int $startIdx, int $endIdx, array $inReal, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -202,6 +252,11 @@ class MathTransform extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param  array<int, float|int> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function tan(int $startIdx, int $endIdx, array $inReal, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
@@ -216,6 +271,11 @@ class MathTransform extends Core
         return ReturnCode::Success->value;
     }
 
+    /**
+     * @param  array<int, float|int> $inReal
+     * @param  array<int, float|int|null> $outReal
+     * @return int
+     */
     public static function tanh(int $startIdx, int $endIdx, array $inReal, int &$outBegIdx, int &$outNBElement, array &$outReal): int
     {
         if ($RetCode = static::validateStartEndIndexes($startIdx, $endIdx)) {
