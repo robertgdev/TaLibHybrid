@@ -1926,8 +1926,8 @@ if (! function_exists('ta_version')) {
      * Beta.
      * @category Statistic Functions
      *
-     * @param array<int,float|int|null> $values Source data seriesA
-     * @param array<int,float|int|null> $values Source data seriesB
+     * @param array<int,float|int|null> $valuesA Source data series A.
+     * @param array<int,float|int|null> $valuesB Source data series B.
      * @param positive-int $period Number of periods.
      *
      * @return array<int,float|int|null>
@@ -1941,8 +1941,8 @@ if (! function_exists('ta_version')) {
      * Pearson's Correlation Coefficient.
      * @category Statistic Functions
      *
-     * @param array<int,float|int|null> $values Source data seriesA
-     * @param array<int,float|int|null> $values Source data seriesB
+     * @param array<int,float|int|null> $valuesA Source data series A.
+     * @param array<int,float|int|null> $valuesB Source data series B.
      * @param positive-int $period Number of periods.
      *
      * @return array<int,float|int|null>
@@ -2325,8 +2325,8 @@ if (! function_exists('ta_version')) {
      * Vector Arithmetic Addition.
      * @category Math Operators
      *
-     * @param array<int,float|int|null> $values Source data seriesA
-     * @param array<int,float|int|null> $values Source data seriesB
+     * @param array<int,float|int|null> $valuesA Source data series A.
+     * @param array<int,float|int|null> $valuesB Source data series B.
      *
      * @return array<int,float|int|null>
      */
@@ -2339,8 +2339,8 @@ if (! function_exists('ta_version')) {
      * Vector Arithmetic Subtraction.
      * @category Math Operators
      *
-     * @param array<int,float|int|null> $values Source data seriesA
-     * @param array<int,float|int|null> $values Source data seriesB
+     * @param array<int,float|int|null> $valuesA Source data series A.
+     * @param array<int,float|int|null> $valuesB Source data series B.
      *
      * @return array<int,float|int|null>
      */
@@ -2353,8 +2353,8 @@ if (! function_exists('ta_version')) {
      * Vector Arithmetic Multiplication.
      * @category Math Operators
      *
-     * @param array<int,float|int|null> $values Source data seriesA
-     * @param array<int,float|int|null> $values Source data seriesB
+     * @param array<int,float|int|null> $valuesA Source data series A.
+     * @param array<int,float|int|null> $valuesB Source data series B.
      *
      * @return array<int,float|int|null>
      */
@@ -2367,8 +2367,8 @@ if (! function_exists('ta_version')) {
      * Vector Arithmetic Division.
      * @category Math Operators
      *
-     * @param array<int,float|int|null> $values Source data seriesA
-     * @param array<int,float|int|null> $values Source data seriesB
+     * @param array<int,float|int|null> $valuesA Source data series A.
+     * @param array<int,float|int|null> $valuesB Source data series B.
      *
      * @return array<int,float|int|null>
      */
