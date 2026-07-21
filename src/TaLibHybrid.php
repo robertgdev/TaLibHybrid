@@ -50,6 +50,7 @@ class TaLibHybrid
 
     /**
      * Acceleration Bands.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -65,6 +66,7 @@ class TaLibHybrid
 
     /**
      * Bollinger Bands.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -81,6 +83,7 @@ class TaLibHybrid
 
     /**
      * Double Exponential Moving Average.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -94,6 +97,7 @@ class TaLibHybrid
 
     /**
      * Exponential Moving Average.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -107,6 +111,7 @@ class TaLibHybrid
 
     /**
      * Hilbert Transform - Instantaneous Trendline.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -119,6 +124,7 @@ class TaLibHybrid
 
     /**
      * Kaufman Adaptive Moving Average.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -132,6 +138,7 @@ class TaLibHybrid
 
     /**
      * Moving Average.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -146,6 +153,7 @@ class TaLibHybrid
 
     /**
      * MESA Adaptive Moving Average.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      * @param float $fastLimit Fast limit.
@@ -160,6 +168,7 @@ class TaLibHybrid
 
     /**
      * Moving Average with Variable Period.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      * @param array<int,int> $periods Variable periods per data point.
@@ -176,6 +185,7 @@ class TaLibHybrid
 
     /**
      * MidPoint over period.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -189,6 +199,7 @@ class TaLibHybrid
 
     /**
      * Midpoint Price over period.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -203,6 +214,7 @@ class TaLibHybrid
 
     /**
      * Parabolic SAR.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -218,6 +230,7 @@ class TaLibHybrid
 
     /**
      * Parabolic SAR - Extended.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -239,6 +252,7 @@ class TaLibHybrid
 
     /**
      * Simple Moving Average.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -252,6 +266,7 @@ class TaLibHybrid
 
     /**
      * Triple Exponential Moving Average (T3).
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -266,6 +281,7 @@ class TaLibHybrid
 
     /**
      * Triple Exponential Moving Average.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -279,6 +295,7 @@ class TaLibHybrid
 
     /**
      * Triangular Moving Average.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -292,6 +309,7 @@ class TaLibHybrid
 
     /**
      * Weighted Moving Average.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -305,6 +323,7 @@ class TaLibHybrid
 
     /**
      * Average True Range.
+     * @category Volatility Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -320,6 +339,7 @@ class TaLibHybrid
 
     /**
      * Normalized Average True Range.
+     * @category Volatility Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -335,6 +355,7 @@ class TaLibHybrid
 
     /**
      * True Range.
+     * @category Volatility Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -349,6 +370,7 @@ class TaLibHybrid
 
     /**
      * Average Directional Movement Index.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -364,6 +386,7 @@ class TaLibHybrid
 
     /**
      * Average Directional Movement Index Rating.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -379,6 +402,7 @@ class TaLibHybrid
 
     /**
      * Absolute Price Oscillator.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $fastPeriod Number of periods for the fast MA.
@@ -394,6 +418,7 @@ class TaLibHybrid
 
     /**
      * Aroon.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -408,6 +433,7 @@ class TaLibHybrid
 
     /**
      * Aroon Oscillator.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -422,6 +448,7 @@ class TaLibHybrid
 
     /**
      * Balance Of Power.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -437,6 +464,7 @@ class TaLibHybrid
 
     /**
      * Commodity Channel Index.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -452,6 +480,7 @@ class TaLibHybrid
 
     /**
      * Chande Momentum Oscillator.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -465,6 +494,7 @@ class TaLibHybrid
 
     /**
      * Directional Movement Index.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -480,6 +510,7 @@ class TaLibHybrid
 
     /**
      * Intraday Momentum Index.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $close Input close price series.
@@ -494,6 +525,7 @@ class TaLibHybrid
 
     /**
      * Moving Average Convergence/Divergence.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $fastPeriod Number of periods for the fast MA.
@@ -509,6 +541,7 @@ class TaLibHybrid
 
     /**
      * MACD with controllable MA type.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $fastPeriod Number of periods for the fast MA.
@@ -527,6 +560,7 @@ class TaLibHybrid
 
     /**
      * MACD Fix 12/26.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $signalPeriod Number of periods for the signal line.
@@ -540,6 +574,7 @@ class TaLibHybrid
 
     /**
      * Money Flow Index.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -556,6 +591,7 @@ class TaLibHybrid
 
     /**
      * Minus Directional Indicator.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -571,6 +607,7 @@ class TaLibHybrid
 
     /**
      * Minus Directional Movement.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -585,6 +622,7 @@ class TaLibHybrid
 
     /**
      * Momentum.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -598,6 +636,7 @@ class TaLibHybrid
 
     /**
      * Plus Directional Indicator.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -613,6 +652,7 @@ class TaLibHybrid
 
     /**
      * Plus Directional Movement.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -627,6 +667,7 @@ class TaLibHybrid
 
     /**
      * Percentage Price Oscillator.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $fastPeriod Number of periods for the fast MA.
@@ -642,6 +683,7 @@ class TaLibHybrid
 
     /**
      * Rate of Change.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -655,6 +697,7 @@ class TaLibHybrid
 
     /**
      * Rate of Change Percentage.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -668,6 +711,7 @@ class TaLibHybrid
 
     /**
      * Rate of Change Ratio.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -681,6 +725,7 @@ class TaLibHybrid
 
     /**
      * Rate of Change Ratio 100 scale.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -694,6 +739,7 @@ class TaLibHybrid
 
     /**
      * Relative Strength Index.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -707,6 +753,7 @@ class TaLibHybrid
 
     /**
      * Stochastic Oscillator.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -726,6 +773,7 @@ class TaLibHybrid
 
     /**
      * Stochastic Fast.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -743,6 +791,7 @@ class TaLibHybrid
 
     /**
      * Stochastic Relative Strength Index.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -759,6 +808,7 @@ class TaLibHybrid
 
     /**
      * Triple Exponential Moving Average (TRIX).
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -772,6 +822,7 @@ class TaLibHybrid
 
     /**
      * Ultimate Oscillator.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -789,6 +840,7 @@ class TaLibHybrid
 
     /**
      * Williams %R.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -804,6 +856,7 @@ class TaLibHybrid
 
     /**
      * Hilbert Transform - Dominant Cycle Period.
+     * @category Cycle Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -816,6 +869,7 @@ class TaLibHybrid
 
     /**
      * Hilbert Transform - Dominant Cycle Phase.
+     * @category Cycle Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -828,6 +882,7 @@ class TaLibHybrid
 
     /**
      * Hilbert Transform - Phasor Components.
+     * @category Cycle Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -840,6 +895,7 @@ class TaLibHybrid
 
     /**
      * Hilbert Transform - SineWave.
+     * @category Cycle Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -852,6 +908,7 @@ class TaLibHybrid
 
     /**
      * Hilbert Transform - Trend vs Cycle Mode.
+     * @category Cycle Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -864,6 +921,7 @@ class TaLibHybrid
 
     /**
      * Chaikin A/D Line.
+     * @category Volume Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -879,6 +937,7 @@ class TaLibHybrid
 
     /**
      * Chaikin A/D Oscillator.
+     * @category Volume Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -896,6 +955,7 @@ class TaLibHybrid
 
     /**
      * On Balance Volume.
+     * @category Volume Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param array<int,float|int|null> $volume Input volume data series.
@@ -909,6 +969,7 @@ class TaLibHybrid
 
     /**
      * Two Crows pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -924,6 +985,7 @@ class TaLibHybrid
 
     /**
      * Three Black Crows pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -939,6 +1001,7 @@ class TaLibHybrid
 
     /**
      * Three Inside Up/Down pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -954,6 +1017,7 @@ class TaLibHybrid
 
     /**
      * Three-Line Strike pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -969,6 +1033,7 @@ class TaLibHybrid
 
     /**
      * Three Outside Up/Down pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -984,6 +1049,7 @@ class TaLibHybrid
 
     /**
      * Three Stars In The South pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -999,6 +1065,7 @@ class TaLibHybrid
 
     /**
      * Three Advancing White Soldiers pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1014,6 +1081,7 @@ class TaLibHybrid
 
     /**
      * Abandoned Baby pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1030,6 +1098,7 @@ class TaLibHybrid
 
     /**
      * Advance Block pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1045,6 +1114,7 @@ class TaLibHybrid
 
     /**
      * Belt-hold pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1060,6 +1130,7 @@ class TaLibHybrid
 
     /**
      * Breakaway pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1075,6 +1146,7 @@ class TaLibHybrid
 
     /**
      * Closing Marubozu pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1090,6 +1162,7 @@ class TaLibHybrid
 
     /**
      * Concealing Baby Swallow pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1105,6 +1178,7 @@ class TaLibHybrid
 
     /**
      * Counterattack pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1120,6 +1194,7 @@ class TaLibHybrid
 
     /**
      * Dark Cloud Cover pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1136,6 +1211,7 @@ class TaLibHybrid
 
     /**
      * Doji pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1151,6 +1227,7 @@ class TaLibHybrid
 
     /**
      * Doji Star pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1166,6 +1243,7 @@ class TaLibHybrid
 
     /**
      * Dragonfly Doji pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1181,6 +1259,7 @@ class TaLibHybrid
 
     /**
      * Engulfing pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1196,6 +1275,7 @@ class TaLibHybrid
 
     /**
      * Evening Doji Star pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1212,6 +1292,7 @@ class TaLibHybrid
 
     /**
      * Evening Star pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1228,6 +1309,7 @@ class TaLibHybrid
 
     /**
      * Up/Down-gap side-by-side white lines pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1243,6 +1325,7 @@ class TaLibHybrid
 
     /**
      * Gravestone Doji pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1258,6 +1341,7 @@ class TaLibHybrid
 
     /**
      * Hammer pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1273,6 +1357,7 @@ class TaLibHybrid
 
     /**
      * Hanging Man pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1288,6 +1373,7 @@ class TaLibHybrid
 
     /**
      * Harami pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1303,6 +1389,7 @@ class TaLibHybrid
 
     /**
      * Harami Cross pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1318,6 +1405,7 @@ class TaLibHybrid
 
     /**
      * High-Wave Candle pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1333,6 +1421,7 @@ class TaLibHybrid
 
     /**
      * Hikkake pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1348,6 +1437,7 @@ class TaLibHybrid
 
     /**
      * Modified Hikkake pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1363,6 +1453,7 @@ class TaLibHybrid
 
     /**
      * Homing Pigeon pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1378,6 +1469,7 @@ class TaLibHybrid
 
     /**
      * Identical Three Crows pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1393,6 +1485,7 @@ class TaLibHybrid
 
     /**
      * In-Neck pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1408,6 +1501,7 @@ class TaLibHybrid
 
     /**
      * Inverted Hammer pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1423,6 +1517,7 @@ class TaLibHybrid
 
     /**
      * Kicking pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1438,6 +1533,7 @@ class TaLibHybrid
 
     /**
      * Kicking - bull/bear determined by the longer marubozu pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1453,6 +1549,7 @@ class TaLibHybrid
 
     /**
      * Ladder Bottom pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1468,6 +1565,7 @@ class TaLibHybrid
 
     /**
      * Long Legged Doji pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1483,6 +1581,7 @@ class TaLibHybrid
 
     /**
      * Long Line Candle pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1498,6 +1597,7 @@ class TaLibHybrid
 
     /**
      * Marubozu pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1513,6 +1613,7 @@ class TaLibHybrid
 
     /**
      * Matching Low pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1528,6 +1629,7 @@ class TaLibHybrid
 
     /**
      * Mat Hold pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1544,6 +1646,7 @@ class TaLibHybrid
 
     /**
      * Morning Doji Star pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1560,6 +1663,7 @@ class TaLibHybrid
 
     /**
      * Morning Star pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1576,6 +1680,7 @@ class TaLibHybrid
 
     /**
      * On-Neck pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1591,6 +1696,7 @@ class TaLibHybrid
 
     /**
      * Piercing pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1606,6 +1712,7 @@ class TaLibHybrid
 
     /**
      * Rickshaw Man pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1621,6 +1728,7 @@ class TaLibHybrid
 
     /**
      * Rising/Falling Three Methods pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1636,6 +1744,7 @@ class TaLibHybrid
 
     /**
      * Separating Lines pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1651,6 +1760,7 @@ class TaLibHybrid
 
     /**
      * Shooting Star pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1666,6 +1776,7 @@ class TaLibHybrid
 
     /**
      * Short Line Candle pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1681,6 +1792,7 @@ class TaLibHybrid
 
     /**
      * Spinning Top pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1696,6 +1808,7 @@ class TaLibHybrid
 
     /**
      * Stalled Pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1711,6 +1824,7 @@ class TaLibHybrid
 
     /**
      * Stick Sandwich pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1726,6 +1840,7 @@ class TaLibHybrid
 
     /**
      * Takuri (Dragonfly Doji with very long lower shadow) pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1741,6 +1856,7 @@ class TaLibHybrid
 
     /**
      * Tasuki Gap pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1756,6 +1872,7 @@ class TaLibHybrid
 
     /**
      * Thrusting pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1771,6 +1888,7 @@ class TaLibHybrid
 
     /**
      * Tristar pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1786,6 +1904,7 @@ class TaLibHybrid
 
     /**
      * Unique 3 River pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1801,6 +1920,7 @@ class TaLibHybrid
 
     /**
      * Upside Gap Two Crows pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1816,6 +1936,7 @@ class TaLibHybrid
 
     /**
      * Upside/Downside Gap Three Methods pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1831,6 +1952,7 @@ class TaLibHybrid
 
     /**
      * Beta.
+     * @category Statistic Functions
      *
      * @param array<int,float|int|null> $values Source data seriesA
      * @param array<int,float|int|null> $values Source data seriesB
@@ -1845,6 +1967,7 @@ class TaLibHybrid
 
     /**
      * Pearson's Correlation Coefficient.
+     * @category Statistic Functions
      *
      * @param array<int,float|int|null> $values Source data seriesA
      * @param array<int,float|int|null> $values Source data seriesB
@@ -1859,6 +1982,7 @@ class TaLibHybrid
 
     /**
      * Linear Regression.
+     * @category Statistic Functions
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -1872,6 +1996,7 @@ class TaLibHybrid
 
     /**
      * Linear Regression Angle.
+     * @category Statistic Functions
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -1885,6 +2010,7 @@ class TaLibHybrid
 
     /**
      * Linear Regression Intercept.
+     * @category Statistic Functions
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -1898,6 +2024,7 @@ class TaLibHybrid
 
     /**
      * Linear Regression Slope.
+     * @category Statistic Functions
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -1911,6 +2038,7 @@ class TaLibHybrid
 
     /**
      * Standard Deviation.
+     * @category Statistic Functions
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -1925,6 +2053,7 @@ class TaLibHybrid
 
     /**
      * Time Series Forecast.
+     * @category Statistic Functions
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -1938,6 +2067,7 @@ class TaLibHybrid
 
     /**
      * Variance.
+     * @category Statistic Functions
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -1952,6 +2082,7 @@ class TaLibHybrid
 
     /**
      * Average Price.
+     * @category Price Transform
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1967,6 +2098,7 @@ class TaLibHybrid
 
     /**
      * Average Deviation.
+     * @category Statistic Functions
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -1980,6 +2112,7 @@ class TaLibHybrid
 
     /**
      * Median Price.
+     * @category Price Transform
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -1993,6 +2126,7 @@ class TaLibHybrid
 
     /**
      * Typical Price.
+     * @category Price Transform
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -2007,6 +2141,7 @@ class TaLibHybrid
 
     /**
      * Weighted Close Price.
+     * @category Price Transform
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -2021,6 +2156,7 @@ class TaLibHybrid
 
     /**
      * Vector Trigonometric Arc Cosine.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2033,6 +2169,7 @@ class TaLibHybrid
 
     /**
      * Vector Trigonometric Arc Sine.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2045,6 +2182,7 @@ class TaLibHybrid
 
     /**
      * Vector Trigonometric Arc Tangent.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2057,6 +2195,7 @@ class TaLibHybrid
 
     /**
      * Vector Ceil.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2069,6 +2208,7 @@ class TaLibHybrid
 
     /**
      * Vector Trigonometric Cosine.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2081,6 +2221,7 @@ class TaLibHybrid
 
     /**
      * Vector Trigonometric Hyperbolic Cosine.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2093,6 +2234,7 @@ class TaLibHybrid
 
     /**
      * Vector Exponential.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2105,6 +2247,7 @@ class TaLibHybrid
 
     /**
      * Vector Floor.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2117,6 +2260,7 @@ class TaLibHybrid
 
     /**
      * Vector Natural Log.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2129,6 +2273,7 @@ class TaLibHybrid
 
     /**
      * Vector Base-10 Log.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2141,6 +2286,7 @@ class TaLibHybrid
 
     /**
      * Vector Trigonometric Sine.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2153,6 +2299,7 @@ class TaLibHybrid
 
     /**
      * Vector Trigonometric Hyperbolic Sine.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2165,6 +2312,7 @@ class TaLibHybrid
 
     /**
      * Vector Square Root.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2177,6 +2325,7 @@ class TaLibHybrid
 
     /**
      * Vector Trigonometric Tangent.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2189,6 +2338,7 @@ class TaLibHybrid
 
     /**
      * Vector Trigonometric Hyperbolic Tangent.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2201,6 +2351,7 @@ class TaLibHybrid
 
     /**
      * Vector Arithmetic Addition.
+     * @category Math Operators
      *
      * @param array<int,float|int|null> $values Source data seriesA
      * @param array<int,float|int|null> $values Source data seriesB
@@ -2214,6 +2365,7 @@ class TaLibHybrid
 
     /**
      * Vector Arithmetic Subtraction.
+     * @category Math Operators
      *
      * @param array<int,float|int|null> $values Source data seriesA
      * @param array<int,float|int|null> $values Source data seriesB
@@ -2227,6 +2379,7 @@ class TaLibHybrid
 
     /**
      * Vector Arithmetic Multiplication.
+     * @category Math Operators
      *
      * @param array<int,float|int|null> $values Source data seriesA
      * @param array<int,float|int|null> $values Source data seriesB
@@ -2240,6 +2393,7 @@ class TaLibHybrid
 
     /**
      * Vector Arithmetic Division.
+     * @category Math Operators
      *
      * @param array<int,float|int|null> $values Source data seriesA
      * @param array<int,float|int|null> $values Source data seriesB
@@ -2253,6 +2407,7 @@ class TaLibHybrid
 
     /**
      * Summation.
+     * @category Math Operators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -2266,6 +2421,7 @@ class TaLibHybrid
 
     /**
      * Highest value over a specified period.
+     * @category Math Operators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -2279,6 +2435,7 @@ class TaLibHybrid
 
     /**
      * Lowest value over a specified period.
+     * @category Math Operators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -2292,6 +2449,7 @@ class TaLibHybrid
 
     /**
      * Index of highest value over a specified period.
+     * @category Math Operators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -2305,6 +2463,7 @@ class TaLibHybrid
 
     /**
      * Index of lowest value over a specified period.
+     * @category Math Operators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -2318,6 +2477,7 @@ class TaLibHybrid
 
     /**
      * Lowest and highest values over a specified period.
+     * @category Math Operators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -2331,6 +2491,7 @@ class TaLibHybrid
 
     /**
      * Indexes of lowest and highest values over a specified period.
+     * @category Math Operators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.

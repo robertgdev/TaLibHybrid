@@ -22,6 +22,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Acceleration Bands.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -37,6 +38,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Bollinger Bands.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -53,6 +55,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Double Exponential Moving Average.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -66,6 +69,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Exponential Moving Average.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -79,6 +83,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Hilbert Transform - Instantaneous Trendline.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -91,6 +96,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Kaufman Adaptive Moving Average.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -104,6 +110,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Moving Average.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -118,6 +125,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * MESA Adaptive Moving Average.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      * @param float $fastLimit Fast limit.
@@ -132,6 +140,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Moving Average with Variable Period.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      * @param array<int,int> $periods Variable periods per data point.
@@ -148,6 +157,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * MidPoint over period.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -161,6 +171,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Midpoint Price over period.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -175,6 +186,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Parabolic SAR.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -190,6 +202,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Parabolic SAR - Extended.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -211,6 +224,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Simple Moving Average.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -224,6 +238,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Triple Exponential Moving Average (T3).
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -238,6 +253,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Triple Exponential Moving Average.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -251,6 +267,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Triangular Moving Average.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -264,6 +281,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Weighted Moving Average.
+     * @category Overlap Studies
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -277,6 +295,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Average True Range.
+     * @category Volatility Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -292,6 +311,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Normalized Average True Range.
+     * @category Volatility Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -307,6 +327,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * True Range.
+     * @category Volatility Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -321,6 +342,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Average Directional Movement Index.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -336,6 +358,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Average Directional Movement Index Rating.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -351,6 +374,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Absolute Price Oscillator.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $fastPeriod Number of periods for the fast MA.
@@ -366,6 +390,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Aroon.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -380,6 +405,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Aroon Oscillator.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -394,6 +420,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Balance Of Power.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -409,6 +436,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Commodity Channel Index.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -424,6 +452,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Chande Momentum Oscillator.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -437,6 +466,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Directional Movement Index.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -452,6 +482,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Intraday Momentum Index.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $close Input close price series.
@@ -466,6 +497,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Moving Average Convergence/Divergence.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $fastPeriod Number of periods for the fast MA.
@@ -481,6 +513,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * MACD with controllable MA type.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $fastPeriod Number of periods for the fast MA.
@@ -499,6 +532,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * MACD Fix 12/26.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $signalPeriod Number of periods for the signal line.
@@ -512,6 +546,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Money Flow Index.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -528,6 +563,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Minus Directional Indicator.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -543,6 +579,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Minus Directional Movement.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -557,6 +594,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Momentum.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -570,6 +608,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Plus Directional Indicator.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -585,6 +624,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Plus Directional Movement.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -599,6 +639,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Percentage Price Oscillator.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $fastPeriod Number of periods for the fast MA.
@@ -614,6 +655,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Rate of Change.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -627,6 +669,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Rate of Change Percentage.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -640,6 +683,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Rate of Change Ratio.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -653,6 +697,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Rate of Change Ratio 100 scale.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -666,6 +711,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Relative Strength Index.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -679,6 +725,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Stochastic Oscillator.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -698,6 +745,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Stochastic Fast.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -715,6 +763,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Stochastic Relative Strength Index.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -731,6 +780,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Triple Exponential Moving Average (TRIX).
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -744,6 +794,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Ultimate Oscillator.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -761,6 +812,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Williams %R.
+     * @category Momentum Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -776,6 +828,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Hilbert Transform - Dominant Cycle Period.
+     * @category Cycle Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -788,6 +841,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Hilbert Transform - Dominant Cycle Phase.
+     * @category Cycle Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -800,6 +854,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Hilbert Transform - Phasor Components.
+     * @category Cycle Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -812,6 +867,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Hilbert Transform - SineWave.
+     * @category Cycle Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -824,6 +880,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Hilbert Transform - Trend vs Cycle Mode.
+     * @category Cycle Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -836,6 +893,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Chaikin A/D Line.
+     * @category Volume Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -851,6 +909,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Chaikin A/D Oscillator.
+     * @category Volume Indicators
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -868,6 +927,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * On Balance Volume.
+     * @category Volume Indicators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param array<int,float|int|null> $volume Input volume data series.
@@ -881,6 +941,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Two Crows pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -896,6 +957,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Three Black Crows pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -911,6 +973,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Three Inside Up/Down pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -926,6 +989,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Three-Line Strike pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -941,6 +1005,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Three Outside Up/Down pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -956,6 +1021,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Three Stars In The South pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -971,6 +1037,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Three Advancing White Soldiers pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -986,6 +1053,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Abandoned Baby pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1002,6 +1070,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Advance Block pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1017,6 +1086,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Belt-hold pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1032,6 +1102,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Breakaway pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1047,6 +1118,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Closing Marubozu pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1062,6 +1134,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Concealing Baby Swallow pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1077,6 +1150,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Counterattack pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1092,6 +1166,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Dark Cloud Cover pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1108,6 +1183,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Doji pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1123,6 +1199,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Doji Star pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1138,6 +1215,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Dragonfly Doji pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1153,6 +1231,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Engulfing pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1168,6 +1247,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Evening Doji Star pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1184,6 +1264,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Evening Star pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1200,6 +1281,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Up/Down-gap side-by-side white lines pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1215,6 +1297,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Gravestone Doji pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1230,6 +1313,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Hammer pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1245,6 +1329,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Hanging Man pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1260,6 +1345,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Harami pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1275,6 +1361,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Harami Cross pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1290,6 +1377,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * High-Wave Candle pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1305,6 +1393,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Hikkake pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1320,6 +1409,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Modified Hikkake pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1335,6 +1425,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Homing Pigeon pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1350,6 +1441,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Identical Three Crows pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1365,6 +1457,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * In-Neck pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1380,6 +1473,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Inverted Hammer pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1395,6 +1489,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Kicking pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1410,6 +1505,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Kicking - bull/bear determined by the longer marubozu pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1425,6 +1521,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Ladder Bottom pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1440,6 +1537,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Long Legged Doji pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1455,6 +1553,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Long Line Candle pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1470,6 +1569,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Marubozu pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1485,6 +1585,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Matching Low pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1500,6 +1601,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Mat Hold pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1516,6 +1618,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Morning Doji Star pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1532,6 +1635,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Morning Star pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1548,6 +1652,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * On-Neck pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1563,6 +1668,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Piercing pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1578,6 +1684,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Rickshaw Man pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1593,6 +1700,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Rising/Falling Three Methods pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1608,6 +1716,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Separating Lines pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1623,6 +1732,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Shooting Star pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1638,6 +1748,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Short Line Candle pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1653,6 +1764,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Spinning Top pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1668,6 +1780,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Stalled Pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1683,6 +1796,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Stick Sandwich pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1698,6 +1812,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Takuri (Dragonfly Doji with very long lower shadow) pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1713,6 +1828,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Tasuki Gap pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1728,6 +1844,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Thrusting pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1743,6 +1860,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Tristar pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1758,6 +1876,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Unique 3 River pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1773,6 +1892,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Upside Gap Two Crows pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1788,6 +1908,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Upside/Downside Gap Three Methods pattern recognition.
+     * @category Pattern Recognition
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1803,6 +1924,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Beta.
+     * @category Statistic Functions
      *
      * @param array<int,float|int|null> $values Source data seriesA
      * @param array<int,float|int|null> $values Source data seriesB
@@ -1817,6 +1939,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Pearson's Correlation Coefficient.
+     * @category Statistic Functions
      *
      * @param array<int,float|int|null> $values Source data seriesA
      * @param array<int,float|int|null> $values Source data seriesB
@@ -1831,6 +1954,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Linear Regression.
+     * @category Statistic Functions
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -1844,6 +1968,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Linear Regression Angle.
+     * @category Statistic Functions
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -1857,6 +1982,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Linear Regression Intercept.
+     * @category Statistic Functions
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -1870,6 +1996,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Linear Regression Slope.
+     * @category Statistic Functions
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -1883,6 +2010,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Standard Deviation.
+     * @category Statistic Functions
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -1897,6 +2025,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Time Series Forecast.
+     * @category Statistic Functions
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -1910,6 +2039,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Variance.
+     * @category Statistic Functions
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -1924,6 +2054,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Average Price.
+     * @category Price Transform
      *
      * @param array<int,float|int|null> $open Input open price series.
      * @param array<int,float|int|null> $high Input high price series.
@@ -1939,6 +2070,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Average Deviation.
+     * @category Statistic Functions
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -1952,6 +2084,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Median Price.
+     * @category Price Transform
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -1965,6 +2098,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Typical Price.
+     * @category Price Transform
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -1979,6 +2113,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Weighted Close Price.
+     * @category Price Transform
      *
      * @param array<int,float|int|null> $high Input high price series.
      * @param array<int,float|int|null> $low Input low price series.
@@ -1993,6 +2128,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Vector Trigonometric Arc Cosine.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2005,6 +2141,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Vector Trigonometric Arc Sine.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2017,6 +2154,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Vector Trigonometric Arc Tangent.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2029,6 +2167,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Vector Ceil.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2041,6 +2180,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Vector Trigonometric Cosine.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2053,6 +2193,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Vector Trigonometric Hyperbolic Cosine.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2065,6 +2206,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Vector Exponential.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2077,6 +2219,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Vector Floor.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2089,6 +2232,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Vector Natural Log.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2101,6 +2245,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Vector Base-10 Log.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2113,6 +2258,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Vector Trigonometric Sine.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2125,6 +2271,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Vector Trigonometric Hyperbolic Sine.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2137,6 +2284,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Vector Square Root.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2149,6 +2297,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Vector Trigonometric Tangent.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2161,6 +2310,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Vector Trigonometric Hyperbolic Tangent.
+     * @category Math Transform
      *
      * @param array<int,float|int|null> $values Source data series
      *
@@ -2173,6 +2323,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Vector Arithmetic Addition.
+     * @category Math Operators
      *
      * @param array<int,float|int|null> $values Source data seriesA
      * @param array<int,float|int|null> $values Source data seriesB
@@ -2186,6 +2337,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Vector Arithmetic Subtraction.
+     * @category Math Operators
      *
      * @param array<int,float|int|null> $values Source data seriesA
      * @param array<int,float|int|null> $values Source data seriesB
@@ -2199,6 +2351,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Vector Arithmetic Multiplication.
+     * @category Math Operators
      *
      * @param array<int,float|int|null> $values Source data seriesA
      * @param array<int,float|int|null> $values Source data seriesB
@@ -2212,6 +2365,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Vector Arithmetic Division.
+     * @category Math Operators
      *
      * @param array<int,float|int|null> $values Source data seriesA
      * @param array<int,float|int|null> $values Source data seriesB
@@ -2225,6 +2379,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Summation.
+     * @category Math Operators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -2238,6 +2393,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Highest value over a specified period.
+     * @category Math Operators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -2251,6 +2407,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Lowest value over a specified period.
+     * @category Math Operators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -2264,6 +2421,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Index of highest value over a specified period.
+     * @category Math Operators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -2277,6 +2435,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Index of lowest value over a specified period.
+     * @category Math Operators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -2290,6 +2449,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Lowest and highest values over a specified period.
+     * @category Math Operators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
@@ -2303,6 +2463,7 @@ if (! function_exists('ta_version')) {
 
     /**
      * Indexes of lowest and highest values over a specified period.
+     * @category Math Operators
      *
      * @param array<int,float|int|null> $values Source data series
      * @param positive-int $period Number of periods.
